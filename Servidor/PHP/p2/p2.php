@@ -49,11 +49,18 @@
 
             // Ej 6
             echo "<h2>Ejercicio 6</h2>";
-            
+            $varHW = "Hello World";
+            $vocalesArray = array("a", "e", "i", "o", "u", "A", "E", "I", "O", "U");
+            $noVocales = str_replace($vocalesArray, "", $varHW); // funcion eliminar vocales gracias a array
+            echo "Resultado: " . $noVocales . "<br>";
 
+            // Ej 7
+            echo "<h2>Ejercicio 7</h2>";
+            $var12=null;
+            echo "Resultado: " . is_null($var12) . "<br> Muestra 1 porque la variable esta vacía, si no lo estuviera mostraría 0 <br>";
 
-
-            
+            // Ej 8
+            echo "<h2>Ejercicio 8</h2>";
             
         ?>
     </body>
