@@ -61,7 +61,40 @@
 
             // Ej 8
             echo "<h2>Ejercicio 8</h2>";
+            $varHW2 = intval($varHW);
+            echo "la variable muestra --> " . $varHW2 . " se debe a que no puede hacer la conversion de string a int, por lo que la funcion intval devuelve 0. El 0 no se muestra por pantalla en php";
             
+            // Ej 9
+            echo "<h2>Ejercicio 9</h2>";
+            //a
+            $num1 = 144;
+            $raizC = sqrt($num1);
+            echo "a) Raíz cuadrada de $num1 : $raizC <br>";
+            //b
+            $base = 2;
+            $exponente = 8;
+            $potencia = pow($base, $exponente);
+            echo "b) $base elevado a $exponente : $potencia <br>";
+
+            //c
+            $dividendo = 100;
+            $divisor = 6;
+            $resto = $dividendo % $divisor;
+            echo "c) Resto de dividir $dividendo entre $divisor : $resto <br>";
+
+            //d
+            function calcularMCD($numero1, $numero2) {
+                while ($numero2 != 0) {
+                    $numeroX = $numero2;
+                    $numero2 = $numero1 % $numero2;
+                    $numero1 = $numeroX;
+                }
+                return $numero1;
+            }
+            $res1 = 3;
+            $res2 = 6;
+            $resultado1 = calcularMCD($res1, $res2);
+            echo "El máximo común divisor de $res1 y $res2 es: $resultado1";
         ?>
     </body>
 </html>
