@@ -1,75 +1,87 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarea 3</title>
-    <link rel="stylesheet" href="Tarea3.css">
-    <script>
-        function enviar() {
-            alert("Sus datos han sido enviados con éxito, en breve recibirá una respuesta al correo indicado.");
-        }
-        function Calculadora() {
-            let resultado = 0;
-            let num = 0;
-            let num2 = 0;
-            let Operacion = prompt("¿Que quiere hacer?(sumar (1), restar (1), multiplicar (1), dividir (1))");
-            num = parseInt(prompt("Ingrese el numero a calcular"));
-            num2 = parseInt(prompt("Ingrese el siguiente numero a calcular"));
-            if (Operacion == 1) {
-                resultado = num + num2;
-                alert("Solucion: "+resultado);
-            } else if (Operacion == 2) {
-                resultado = num-num2;
-                alert("Solucion: "+resultado);
-            } else if (Operacion == 4) {
-                resultado = num / num2;
-                alert("Solucion: "+resultado);
-            } else if (Operacion == 3) {
-                resultado = num * num2;
-                alert("Solucion: "+resultado);
-            } else {
-                alert("No se puede hacer una operacion con caracteres");
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tarea 3</title>
+        <link rel="stylesheet" href="Tarea3.css">
+        <script>
+            function primo() {
+            let numero = prompt("Introduce el numero para comprobar si es primo");
+                if (numero <= 1) {
+                    alert (false);
+                }
+                if (numero <= 3) {
+                    alert (true);
+                }
+                if (numero % 2 === 0 || numero % 3 === 0) {
+                    alert (false);
+                }
+
+                let i = 5;
+                while (i * i <= numero) {
+                    if (numero % i === 0 || numero % (i + 2) === 0) {
+                    alert (false);
+                    }
+                    i += 6;
+                }
+
+                else alert (true);
             }
-        }
-    </script>
-</head>
-<body>
-    <div class="cabecera">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpkHfhPMGP-4YdrjNFNr3-ZyDijmR3sLSPwA&usqp=CAU" alt="">
-        <nav>
-            <ul>
-                <li><a href="#" onclick="Calculadora()">Calculadora</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="Contenido">
-        <form action="/my-handling-form-page" method="post">
-            <br><br><br><br><br>
-            <ul>
-                <label for="name">Nombre Completo:</label>
-                <input type="text" id="name" name="user_name" />
-            </ul>
-            <br>
-            <ul>
-                <label for="mail">Correo electrónico:</label>
-                <input type="email" id="mail" name="user_mail" />
-            </ul>
-            <br>
-            <ul>
-                <label for="numero">Numero</label>
-                <input type="tel" id="numero" name="number" />
-            </ul>
-            <br>
-            <ul>
-                <label for="msg">Mensaje:</label>
-                <textarea id="msg" name="user_message"></textarea>
-            </ul>
-            <br><br>
-            <button type="reset" onclick="enviar()">Enviar</button>
-        </form>
-    </div>
-    <div class="Pie">
-        <footer>Antonio Jesús Pérez Ruiz | Todos los derechos reservados ©</footer>
-    </div>
-</body>
+
+// Ejemplo de uso:
+const numero = 17;
+if (esPrimo(numero)) {
+  console.log(numero + " es un número primo.");
+} else {
+  console.log(numero + " no es un número primo.");
+}
+
+            function enviar() {
+                alert("Sus datos han sido enviados con éxito, en breve recibirá una respuesta al correo indicado.");
+            }
+        </script>
+    </head>
+    
+    <body>
+        <div class="header">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpkHfhPMGP-4YdrjNFNr3-ZyDijmR3sLSPwA&usqp=CAU" alt="">
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="primo()">Calcular número primo</a></li>
+                    <li><a href="https://translate.google.com/?hl=es">Traductor</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <form action="/my-handling-form-page" method="post">
+                <br><br><br>
+                <h2>Formulario de contacto</h2>
+                <br>
+                <ul>
+                    <label for="name">Nombre Completo:</label>
+                    <input type="text" id="name" name="user_name" />
+                </ul>
+                <br>
+                <ul>
+                    <label for="mail">Correo electrónico:</label>
+                    <input type="email" id="mail" name="user_mail" />
+                </ul>
+                <br>
+                <ul>
+                    <label for="numero">Numero</label>
+                    <input type="tel" id="numero" name="number" />
+                </ul>
+                <br>
+                <ul>
+                    <label for="msg">Consulta:</label>
+                    <textarea id="msg" name="user_message"></textarea>
+                </ul>
+                <br><br>
+                <button type="reset" onclick="enviar()">Enviar</button>
+            </form>
+        </div>
+        <div class="foot">
+            <footer>Antonio Jesús Pérez Ruiz | Todos los derechos reservados ©</footer>
+        </div>
+    </body>
 </html>

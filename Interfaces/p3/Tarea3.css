@@ -2,7 +2,7 @@ body {
     background-color: rgb(210, 250, 135);
 }
 
-.cabecera {
+.header {
     background: black;
     position: fixed;
     top: 0;
@@ -12,17 +12,16 @@ body {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
-.cabecera > img {
+.header > img {
     width: 200px;
     height: 80px;
 }
-.Contenido {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Times, serif;
+.content {
     text-align: justify;
     background-color: lightgray;
     border: 2px solid black;
     width: 95%;
-    height: 80%;
+    height: 79%;
     margin-top: 100px;
     margin-left: 2.2%;
     box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 1);
@@ -33,15 +32,14 @@ form {
     text-align: center;
     padding: 1em;
     display: grid;
-    width: 90px;
+    width: 150px;
 }
+
 form > button {
     margin-left: 40px;
 }
-.cabecera > h1 {
-    text-align: center;
-}
-.pie {
+
+.foot {
     text-align: center;
     height: 50px;
     color: white;
@@ -51,15 +49,18 @@ form > button {
     left: 0;
     width: 100%;
     z-index: 999px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
 }
+
 footer {
-    margin-top: 15px;
+    margin-top: 20px;
 }
+
 nav {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Times, serif;
     float: right;
 }
+
+
     nav ul {
         margin: 0;
         padding: 0;
