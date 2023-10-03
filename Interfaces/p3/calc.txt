@@ -1,0 +1,28 @@
+function primo() {
+            let numero = prompt("Introduce el numero para comprobar si es primo");
+                if (numero <= 1) {
+                    alert (false);
+                }
+                if (numero <= 3) {
+                    alert (true);
+                }
+                if (numero % 2 === 0 || numero % 3 === 0) {
+                    alert (false);
+                }
+
+                let i = 5;
+                while (i * i <= numero) {
+                    if (numero % i === 0 || numero % (i + 2) === 0) {
+                    alert (false);
+                    }
+                    i += 6;
+                }
+            }
+
+// Ejemplo de uso:
+const numero = 17;
+if (esPrimo(numero)) {
+  console.log(numero + " es un número primo.");
+} else {
+  console.log(numero + " no es un número primo.");
+}
