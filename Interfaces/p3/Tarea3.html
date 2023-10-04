@@ -5,37 +5,6 @@
         <title>Tarea 3</title>
         <link rel="stylesheet" href="Tarea3.css">
         <script>
-            function primo() {
-            let numero = prompt("Introduce el numero para comprobar si es primo");
-                if (numero <= 1) {
-                    alert (false);
-                }
-                if (numero <= 3) {
-                    alert (true);
-                }
-                if (numero % 2 === 0 || numero % 3 === 0) {
-                    alert (false);
-                }
-
-                let i = 5;
-                while (i * i <= numero) {
-                    if (numero % i === 0 || numero % (i + 2) === 0) {
-                    alert (false);
-                    }
-                    i += 6;
-                }
-
-                else alert (true);
-            }
-
-// Ejemplo de uso:
-const numero = 17;
-if (esPrimo(numero)) {
-  console.log(numero + " es un número primo.");
-} else {
-  console.log(numero + " no es un número primo.");
-}
-
             function enviar() {
                 alert("Sus datos han sido enviados con éxito, en breve recibirá una respuesta al correo indicado.");
             }
@@ -47,7 +16,6 @@ if (esPrimo(numero)) {
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpkHfhPMGP-4YdrjNFNr3-ZyDijmR3sLSPwA&usqp=CAU" alt="">
             <nav>
                 <ul>
-                    <li><a href="#" onclick="primo()">Calcular número primo</a></li>
                     <li><a href="https://translate.google.com/?hl=es">Traductor</a></li>
                 </ul>
             </nav>

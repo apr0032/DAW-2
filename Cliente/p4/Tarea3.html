@@ -1,0 +1,69 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tarea 3</title>
+        <link rel="stylesheet" href="Tarea3.css">
+        <script>
+            function Calculadora() {
+            let resultado = 0;
+            let numero = 0;
+            let numero2 = 0;
+            numero = parseInt(prompt("Ingrese el primer número de la operación"));
+            numero2 = parseInt(prompt("Ingrese el segundo número de la operación"));
+            let Operacion = prompt("¿Que operacion desea hacer?(sumar (1), restar (2), multiplicar (3), dividir (4), nuevos valores (5), salir (6))");
+            if (Operacion == 1) {
+                resultado = numero + numero2;
+                alert("Solucion: "+resultado);
+            } else if (Operacion == 2) {
+                resultado = numero-numero2;
+                alert("Solucion: "+resultado);
+            } else if (Operacion == 3) {
+                resultado = numero * numero2;
+                alert("Solucion: "+resultado);
+            } else if (Operacion == 4) {
+                resultado = numero / numero2;
+                alert("Solucion: "+resultado);
+///////////////////////////////////////////////////////////////////////
+            } else if (Operacion == 5) {
+                resultado = numero / numero2;
+                alert("Solucion: "+resultado);
+///////////////////////////////////////////////////////////////////////
+            } else if (Operacion == 6) {
+                resultado = numero / numero2;
+                close();
+            } else {
+                alert("No se puede hacer una operacion con caracteres");
+            }
+        }
+        function hola(){
+            alert("hola");
+        }
+        function adios(){
+            alert("adios");
+        }
+        function bienvenido(){
+            let bienve = prompt("Introduzca su nombre");
+            alert("Bienvenid@ a mi página " + bienve);
+        }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="Calculadora()">Calculadora</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <img src="https://i.ytimg.com/vi/Y2nAvGEOdDU/mqdefault.jpg" alt="" onmouseover="adios()"><br><br><br><br>
+            <button type="reset" onclick="hola()">Saludos</button><br><br><br>
+            <button type="reset" onclick="bienvenido()">Saludar</button>
+        </div>
+        
+        <div class="foot">
+            <footer>Antonio Jesús Pérez Ruiz | Todos los derechos reservados ©</footer>
+        </div>
+    </body>
+</html>
