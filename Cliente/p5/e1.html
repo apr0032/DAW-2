@@ -1,0 +1,27 @@
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tarea 5</title>
+        <link rel="stylesheet" href="x.css">
+        <script>
+            function infoEnlace() {
+                var enlace = document.getElementById('enlaceGoogle');
+                var url = enlace.href;
+                var texto = enlace.textContent;
+                alert(url + "  -->  " + texto);
+            }
+
+            function cambiarEnlace() {
+                var enlace = document.getElementById('enlaceGoogle');
+                enlace.href = "https://medac.es/"; // cambiar url
+                enlace.textContent = "he cambiado"; // cambir texto
+            }
+        </script>
+    </head>
+    <body>
+        <a id="enlaceGoogle" href="https://www.google.com/?hl=es">Google</a> <br><br>
+        <button onclick="infoEnlace()">Información del Enlace</button>
+        <button onclick="cambiarEnlace()">Cambiar Enlace</button>
+    </body>
+</html>
