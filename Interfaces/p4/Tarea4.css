@@ -1,18 +1,53 @@
-/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-image: url("https://pbs.twimg.com/media/FG55N4jX0AcuzJT.jpg:large");
+    background-size: cover;
+    background-repeat: repeat;
 }
+
+b {
+    color: white;
+}
+
+.c22{
+    width: 300px;
+    display: grid;
+    place-items: center;
+    margin: auto;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(to left, #D9372E, #124FB5, #D9372E, #124FB5, #D9372E);    
+    background-clip: text;
+    animation: color 8s linear infinite;
+    background-size: 500%;
+    border-radius: 10px;
+    
+}
+
+@keyframes color {
+    from {
+        background-position: 0% 100%;
+    }
+
+    to {
+        background-position: 100% 0%;
+    }
+}
+
 
 header {
-    background-color: #333;
+    height: 45px;
+    background-image: url("https://i0.wp.com/sederiasjm.es/wp-content/uploads/2020/06/DSC01479-scaled.jpg");
+    background-size:10%;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 40px;
+    
 }
 
-.product-cards {
+.productos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -20,25 +55,45 @@ header {
     margin: 20px;
 }
 
-.product-card {
+.producto {
+    transition: 1s;
     flex: 1;
     max-width: 300px;
     border: 1px solid #ccc;
     margin: 10px;
     padding: 20px;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
 }
 
-.product-card img {
+.producto:hover{
+    transform: scale(1.3);
+    transition: 1s;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-image: linear-gradient(to left, #D9372E, #124FB5, #D9372E, #124FB5, #D9372E);    
+    background-clip: text;
+    animation: color 2s linear infinite;
+    background-size: 500%;
+    border-radius: 10px;
+}
+
+.producto img {
     max-width: 100%;
     height: auto;
 }
 
 footer {
-    background-color: #333;
-    color: white;
     text-align: center;
-    padding: 10px;
+    height: 90px;
+    color: white;
+    background-color: #424949;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999px;
 }
 
 footer a {
