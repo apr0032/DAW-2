@@ -68,10 +68,10 @@ header {
 }
 
 .producto:hover{
-    transform: scale(1.3);
+    transform: scale(1.2);
     transition: 1s;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 4%;
+    margin-right: 4%;
     background-image: linear-gradient(to left, #D9372E, #124FB5, #D9372E, #124FB5, #D9372E);    
     background-clip: text;
     animation: color 2s linear infinite;
