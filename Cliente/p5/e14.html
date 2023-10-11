@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="e14.css">
+</head>
+<body>
+    <div class="principal">
+        <ul>
+            <li class="menu">
+                Inicio
+                <ul class="submenu">
+                    <li>Portada</li>
+                    <li>Acerca de mi</li>
+                    <li>Mis fotos</li>
+                </ul>
+            </li>
+            <li class="menu">
+                Proyectos
+                <ul class="submenu">
+                    <li>Web Apps</li>
+                    <li>Mobile Apps</li>
+                    <li>Juegos</li>
+                </ul>
+            </li>
+            <li class="menu">
+                Portfolio
+                <ul class="submenu">
+                    <li>Páginas webs</li>
+                    <li>Software</li>
+                </ul>
+            </li>
+            <li class="menu">Contacto</li>
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuX = document.querySelectorAll(".menu");
+
+            menuX.forEach(function (menu) {
+                menu.addEventListener("click", function () {
+                    menu.classList.toggle("active");
+
+                    menuX.forEach(function (menuY) {
+                        if (menuY !== menu) {
+                            menuY.classList.remove("active");
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+

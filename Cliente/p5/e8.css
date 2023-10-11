@@ -1,0 +1,13 @@
+.image-container {
+    display: inline-block;
+    position: relative;
+}
+
+.rollover {
+    transition: transform 2s ease;
+}
+
+.rollover:hover {
+    content: url("https://www.mundodeportivo.com/us/files/og_thumbnail/files/fp/uploads/2023/03/13/640f78afc7114.r_d.504-375-11719.jpeg");
+}
+

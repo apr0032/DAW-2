@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="e13.css">
+</head>
+<body>
+    <div class="spoiler">
+        <button class="spoiler-button">Ocultar</button>
+        <p class="spoiler-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <script>
+        const spoilers = document.querySelectorAll(".spoiler");
+
+        spoilers.forEach(function(spoiler) {
+            const content = spoiler.querySelector(".spoiler-content");
+            const button = spoiler.querySelector(".spoiler-button");
+
+            button.addEventListener("click", function() {
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                    button.textContent = "Mostrar";
+                } else {
+                    content.style.display = "block";
+                    button.textContent = "Ocultar";
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
+
+
+
+

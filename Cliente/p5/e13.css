@@ -1,0 +1,11 @@
+.spoiler-content {
+    display: block;
+}
+
+.spoiler-button {
+    cursor: pointer;
+    background-color: #e0e0e0;
+    border: none;
+    padding: 5px 10px;
+    font-weight: bold;
+}

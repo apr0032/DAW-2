@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>e4</title>
+    <style>
+        .imagenes {
+            text-align: center;
+            position: relative;
+        }
+
+        .foto {
+            display: none;
+        }
+
+        #anterior, #siguiente {
+            background-color: #0074cc;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #anterior:disabled, #siguiente:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="imagenes">
+        <button id="anterior" disabled>Anterior</button>
+        <button id="siguiente">Siguiente</button>
+        <img class="foto" src="Captura1.png">
+        <img class="foto" src="Captura2.png">
+        <img class="foto" src="Captura3.png">
+        <img class="foto" src="Captura4.png">
+        <img class="foto" src="Captura5.png">
+    </div>
+
+    <script>
+        const fotos = document.querySelectorAll('.foto');
+        const anteriorConst = document.getElementById('anterior');
+        const siguienteConst = document.getElementById('siguiente');
+        let currentIndex = 0;
+
+        function mostrarFoto(index) {
+            fotos.forEach((foto, i) => {
+                foto.style.display = i === index ? 'block' : 'none';
+            });
+            anteriorConst.disabled = index === 0;
+            siguienteConst.disabled = index === fotos.length - 1;
+        }
+
+        mostrarFoto(currentIndex);
+
+        anteriorConst.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                mostrarFoto(currentIndex);
+            }
+        });
+        siguienteConst.addEventListener('click', () => {
+            if (currentIndex < fotos.length - 1) {
+                currentIndex++;
+                mostrarFoto(currentIndex);
+            }
+        });
+    </script>
+</body>
+</html>
