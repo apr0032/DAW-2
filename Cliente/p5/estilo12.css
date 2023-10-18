@@ -1,0 +1,14 @@
+#aea {
+    position: relative;
+}
+
+#foto{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+button {
+    margin: 10px;
+    margin-top:23%;
+}

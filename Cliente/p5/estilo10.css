@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s ease;
+}
+
+.caja {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    cursor: pointer;
+
+}
+
+#caja1{
+    background-color: pink
+}
+
+#caja2{
+    background-color: peachpuff;
+}
+
+#caja3{
+    background-color: lightblue;
+}

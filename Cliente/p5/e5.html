@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+
+    body{
+        background-color: rgb(41, 39, 39);
+    }
+
+    .uno {
+      background-color: white;
+      border: 1px solid black;
+      width: 200px;
+      font-size: 16px;
+    }
+
+    .dos {
+      background-color: black;
+      border: 1px solid white;
+      color: white;
+      width: 250px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <p id="parrafon" class="uno" onclick="cambio()">Tamarita</p>
+
+  <script>
+    function cambio() {
+      const parrafo = document.getElementById("parrafon");
+      if (parrafo.classList.contains("uno")) {
+        parrafo.classList.remove("uno");
+        parrafo.classList.add("dos");
+      } else {
+        parrafo.classList.remove("dos");
+        parrafo.classList.add("uno");
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <div id="numero">0</div>
+    <button id="sumar">Sumar</button>
+    <button id="restar">Restar</button>
+
+    <script>
+        const numero = document.getElementById("numero");
+        const sumar = document.getElementById("sumar");
+        const restar = document.getElementById("restar");
+
+        sumar.addEventListener("click", () => {
+            let numero1 = parseInt(numero.innerText);
+            numero1++;
+            numero.innerText = numero1;
+        });
+
+        restar.addEventListener("click", () => {
+            let numero1 = parseInt(numero.innerText);
+            numero1--;
+            numero.innerText = numero1;
+        });
+    </script>
+</body>
+</html>

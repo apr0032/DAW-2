@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(que3.jfif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cajas {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    position: absolute;
+    left: 0;
+}
+
+#Caja1 {
+    background-color: red;
+    margin-top: 30px;
+}
+
+#Caja2 {
+    background-color: green;
+    margin-top: 140px;
+}
+
+#Caja3 {
+    background-color: blue;
+    margin-top: 250px;
+}
+
+#Caja4 {
+    background-color: orange;
+    margin-top: 360px;
+}
+
+button{
+    margin-top: 25%;
+}
