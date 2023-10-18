@@ -22,7 +22,7 @@
                 $envio = 1.95;
                 break;
             default:
-                $envio = 0; // Envío gratuito
+                $envio = 0;
         }
 
         echo "El precio sin envío es: " . $total . "€<br>";
