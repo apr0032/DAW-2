@@ -1,0 +1,1532 @@
+antonio@antonio-VirtualBox:~$ sudo apt-get install openssl
+
+[sudo] contraseña para antonio: 
+
+Leyendo lista de paquetes... Hecho
+
+Creando árbol de dependencias... Hecho
+
+Leyendo la información de estado... Hecho
+
+openssl ya está en su versión más reciente (3.0.2-0ubuntu1.10).
+
+fijado openssl como instalado manualmente.
+
+0 actualizados, 0 nuevos se instalarán, 0 para eliminar y 49 no actualizados.
+
+antonio@antonio-VirtualBox:~$ ^[[200~sudo yum update
+
+sudo: orden no encontrada
+
+antonio@antonio-VirtualBox:~$ sudo apt update
+
+Obj:1 http://es.archive.ubuntu.com/ubuntu jammy InRelease
+
+Des:2 http://es.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]    
+
+Des:3 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]     
+
+Des:4 http://es.archive.ubuntu.com/ubuntu jammy-backports InRelease [109 kB]
+
+Des:5 http://es.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [1.103 kB]
+
+Des:6 http://security.ubuntu.com/ubuntu jammy-security/main i386 Packages [353 kB]
+
+Des:7 http://es.archive.ubuntu.com/ubuntu jammy-updates/main i386 Packages [515 kB]
+
+Des:8 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [896 kB]
+
+Des:9 http://es.archive.ubuntu.com/ubuntu jammy-updates/main amd64 DEP-11 Metadata [101 kB]
+
+Des:10 http://es.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [995 kB]
+
+Des:11 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [180 kB]
+
+Des:12 http://es.archive.ubuntu.com/ubuntu jammy-updates/universe i386 Packages [660 kB]
+
+Des:13 http://security.ubuntu.com/ubuntu jammy-security/main amd64 DEP-11 Metadata [43,0 kB]
+
+Des:14 http://security.ubuntu.com/ubuntu jammy-security/universe i386 Packages [562 kB]
+
+Des:15 http://es.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 DEP-11 Metadata [305 kB]
+
+Des:16 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [793 kB]
+
+Des:17 http://es.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 c-n-f Metadata [22,0 kB]
+
+Des:18 http://es.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 DEP-11 Metadata [940 B]
+
+Des:19 http://es.archive.ubuntu.com/ubuntu jammy-backports/main amd64 DEP-11 Metadata [4.924 B]
+
+Des:20 http://es.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 DEP-11 Metadata [17,6 kB]
+
+Des:21 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 DEP-11 Metadata [55,1 kB]
+
+Des:22 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 c-n-f Metadata [16,8 kB]
+
+Descargados 6.961 kB en 6s (1.100 kB/s)                                        
+
+Leyendo lista de paquetes... Hecho
+
+Creando árbol de dependencias... Hecho
+
+Leyendo la información de estado... Hecho
+
+Se pueden actualizar 50 paquetes. Ejecute «apt list --upgradable» para verlos.
+
+antonio@antonio-VirtualBox:~$ sudo apt install apache2
+
+Leyendo lista de paquetes... Hecho
+
+Creando árbol de dependencias... Hecho
+
+Leyendo la información de estado... Hecho
+
+Se instalarán los siguientes paquetes adicionales:
+
+  apache2-bin apache2-data apache2-utils libapr1 libaprutil1
+
+  libaprutil1-dbd-sqlite3 libaprutil1-ldap
+
+Paquetes sugeridos:
+
+  apache2-doc apache2-suexec-pristine | apache2-suexec-custom
+
+Se instalarán los siguientes paquetes NUEVOS:
+
+  apache2 apache2-bin apache2-data apache2-utils libapr1 libaprutil1
+
+  libaprutil1-dbd-sqlite3 libaprutil1-ldap
+
+0 actualizados, 8 nuevos se instalarán, 0 para eliminar y 50 no actualizados.
+
+Se necesita descargar 1.918 kB de archivos.
+
+Se utilizarán 7.706 kB de espacio de disco adicional después de esta operación.
+
+¿Desea continuar? [S/n] s
+
+Des:1 http://es.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libapr1 amd64 1.7.0-8ubuntu0.22.04.1 [108 kB]
+
+Des:2 http://es.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libaprutil1 amd64 1.6.1-5ubuntu4.22.04.2 [92,8 kB]
+
+Des:3 http://es.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libaprutil1-dbd-sqlite3 amd64 1.6.1-5ubuntu4.22.04.2 [11,3 kB]
+
+Des:4 http://es.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libaprutil1-ldap amd64 1.6.1-5ubuntu4.22.04.2 [9.170 B]
+
+Des:5 http://es.archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2-bin amd64 2.4.52-1ubuntu4.6 [1.345 kB]
+
+Des:6 http://es.archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2-data all 2.4.52-1ubuntu4.6 [165 kB]
+
+Des:7 http://es.archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2-utils amd64 2.4.52-1ubuntu4.6 [89,1 kB]
+
+Des:8 http://es.archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2 amd64 2.4.52-1ubuntu4.6 [97,8 kB]
+
+Descargados 1.918 kB en 2s (850 kB/s)   
+
+Seleccionando el paquete libapr1:amd64 previamente no seleccionado.
+
+(Leyendo la base de datos ... 203748 ficheros o directorios instalados actualmen
+
+te.)
+
+Preparando para desempaquetar .../0-libapr1_1.7.0-8ubuntu0.22.04.1_amd64.deb ...
+
+Desempaquetando libapr1:amd64 (1.7.0-8ubuntu0.22.04.1) ...
+
+Seleccionando el paquete libaprutil1:amd64 previamente no seleccionado.
+
+Preparando para desempaquetar .../1-libaprutil1_1.6.1-5ubuntu4.22.04.2_amd64.deb
+
+ ...
+
+Desempaquetando libaprutil1:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+
+Seleccionando el paquete libaprutil1-dbd-sqlite3:amd64 previamente no selecciona
+
+do.
+
+Preparando para desempaquetar .../2-libaprutil1-dbd-sqlite3_1.6.1-5ubuntu4.22.04
+
+.2_amd64.deb ...
+
+Desempaquetando libaprutil1-dbd-sqlite3:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+
+Seleccionando el paquete libaprutil1-ldap:amd64 previamente no seleccionado.
+
+Preparando para desempaquetar .../3-libaprutil1-ldap_1.6.1-5ubuntu4.22.04.2_amd6
+
+4.deb ...
+
+Desempaquetando libaprutil1-ldap:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+
+Seleccionando el paquete apache2-bin previamente no seleccionado.
+
+Preparando para desempaquetar .../4-apache2-bin_2.4.52-1ubuntu4.6_amd64.deb ...
+
+Desempaquetando apache2-bin (2.4.52-1ubuntu4.6) ...
+
+Seleccionando el paquete apache2-data previamente no seleccionado.
+
+Preparando para desempaquetar .../5-apache2-data_2.4.52-1ubuntu4.6_all.deb ...
+
+Desempaquetando apache2-data (2.4.52-1ubuntu4.6) ...
+
+Seleccionando el paquete apache2-utils previamente no seleccionado.
+
+Preparando para desempaquetar .../6-apache2-utils_2.4.52-1ubuntu4.6_amd64.deb ..
+
+.
+
+Desempaquetando apache2-utils (2.4.52-1ubuntu4.6) ...
+
+Seleccionando el paquete apache2 previamente no seleccionado.
+
+Preparando para desempaquetar .../7-apache2_2.4.52-1ubuntu4.6_amd64.deb ...
+
+Desempaquetando apache2 (2.4.52-1ubuntu4.6) ...
+
+Configurando libapr1:amd64 (1.7.0-8ubuntu0.22.04.1) ...
+
+Configurando apache2-data (2.4.52-1ubuntu4.6) ...
+
+Configurando libaprutil1:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+
+Configurando libaprutil1-ldap:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+
+Configurando libaprutil1-dbd-sqlite3:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+
+Configurando apache2-utils (2.4.52-1ubuntu4.6) ...
+
+Configurando apache2-bin (2.4.52-1ubuntu4.6) ...
+
+Configurando apache2 (2.4.52-1ubuntu4.6) ...
+
+Enabling module mpm_event.
+
+Enabling module authz_core.
+
+Enabling module authz_host.
+
+Enabling module authn_core.
+
+Enabling module auth_basic.
+
+Enabling module access_compat.
+
+Enabling module authn_file.
+
+Enabling module authz_user.
+
+Enabling module alias.
+
+Enabling module dir.
+
+Enabling module autoindex.
+
+Enabling module env.
+
+Enabling module mime.
+
+Enabling module negotiation.
+
+Enabling module setenvif.
+
+Enabling module filter.
+
+Enabling module deflate.
+
+Enabling module status.
+
+Enabling module reqtimeout.
+
+Enabling conf charset.
+
+Enabling conf localized-error-pages.
+
+Enabling conf other-vhosts-access-log.
+
+Enabling conf security.
+
+Enabling conf serve-cgi-bin.
+
+Enabling site 000-default.
+
+Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /l
+
+ib/systemd/system/apache2.service.
+
+Created symlink /etc/systemd/system/multi-user.target.wants/apache-htcacheclean.
+
+service → /lib/systemd/system/apache-htcacheclean.service.
+
+Procesando disparadores para ufw (0.36.1-4ubuntu0.1) ...
+
+Procesando disparadores para man-db (2.10.2-1) ...
+
+Procesando disparadores para libc-bin (2.35-0ubuntu3.1) ...
+
+antonio@antonio-VirtualBox:~$ sudo systemctl enable apache2
+
+Synchronizing state of apache2.service with SysV service script with /lib/systemd/systemd-sysv-install.
+
+Executing: /lib/systemd/systemd-sysv-install enable apache2
+
+antonio@antonio-VirtualBox:~$ ls
+
+Descargas   Escritorio  Música      Público  Vídeos
+
+Documentos  Imágenes    Plantillas  snap
+
+antonio@antonio-VirtualBox:~$ cd/desktop
+
+bash: cd/desktop: No existe el archivo o el directorio
+
+antonio@antonio-VirtualBox:~$ cd/Escritorio
+
+bash: cd/Escritorio: No existe el archivo o el directorio
+
+antonio@antonio-VirtualBox:~$ 
+
+antonio@antonio-VirtualBox:~$ cd /Escritorio
+
+bash: cd: /Escritorio: No existe el archivo o el directorio
+
+antonio@antonio-VirtualBox:~$ cd
+
+antonio@antonio-VirtualBox:~$ cd
+
+antonio@antonio-VirtualBox:~$ ls
+
+Descargas   Escritorio  Música      Público  Vídeos
+
+Documentos  Imágenes    Plantillas  snap
+
+antonio@antonio-VirtualBox:~$ cd /Escritorio
+
+bash: cd: /Escritorio: No existe el archivo o el directorio
+
+antonio@antonio-VirtualBox:~$ ls
+
+Descargas   Escritorio  Música      Público  Vídeos
+
+Documentos  Imágenes    Plantillas  snap
+
+antonio@antonio-VirtualBox:~$ cd
+
+antonio@antonio-VirtualBox:~$ cd Escritorio/
+
+antonio@antonio-VirtualBox:~/Escritorio$ ls
+
+antonio@antonio-VirtualBox:~/Escritorio$ cd
+
+antonio@antonio-VirtualBox:~$ ls
+
+Descargas   Escritorio  Música      Público  Vídeos
+
+Documentos  Imágenes    Plantillas  snap
+
+antonio@antonio-VirtualBox:~$ cd etc/
+
+bash: cd: etc/: No existe el archivo o el directorio
+
+antonio@antonio-VirtualBox:~$ cd /etc/
+
+antonio@antonio-VirtualBox:/etc$ ls
+
+acpi                           hostid               ppp
+
+adduser.conf                   hostname             printcap
+
+alsa                           hosts                profile
+
+alternatives                   hosts.allow          profile.d
+
+anacrontab                     hosts.deny           protocols
+
+apache2                        hp                   pulse
+
+apg.conf                       ifplugd              python3
+
+apm                            init                 python3.10
+
+apparmor                       init.d               rc0.d
+
+apparmor.d                     initramfs-tools      rc1.d
+
+apport                         inputrc              rc2.d
+
+appstream.conf                 insserv.conf.d       rc3.d
+
+apt                            ipp-usb              rc4.d
+
+avahi                          iproute2             rc5.d
+
+bash.bashrc                    issue                rc6.d
+
+bash_completion                issue.net            rcS.d
+
+bash_completion.d              kernel               resolv.conf
+
+bindresvport.blacklist         kernel-img.conf      rmt
+
+binfmt.d                       kerneloops.conf      rpc
+
+bluetooth                      ldap                 rsyslog.conf
+
+brlapi.key                     ld.so.cache          rsyslog.d
+
+brltty                         ld.so.conf           rygel.conf
+
+brltty.conf                    ld.so.conf.d         sane.d
+
+ca-certificates                legal                security
+
+ca-certificates.conf           libao.conf           selinux
+
+ca-certificates.conf.dpkg-old  libaudit.conf        sensors3.conf
+
+chatscripts                    libblockdev          sensors.d
+
+console-setup                  libnl-3              services
+
+cracklib                       libpaper.d           sgml
+
+cron.d                         libreoffice          shadow
+
+cron.daily                     locale.alias         shadow-
+
+cron.hourly                    locale.gen           shells
+
+cron.monthly                   localtime            skel
+
+crontab                        logcheck             snmp
+
+cron.weekly                    login.defs           speech-dispatcher
+
+cups                           logrotate.conf       ssh
+
+cupshelpers                    logrotate.d          ssl
+
+dbus-1                         lsb-release          subgid
+
+dconf                          machine-id           subgid-
+
+debconf.conf                   magic                subuid
+
+debian_version                 magic.mime           subuid-
+
+default                        mailcap              sudo.conf
+
+deluser.conf                   mailcap.order        sudoers
+
+depmod.d                       manpath.config       sudoers.d
+
+dhcp                           mime.types           sudo_logsrvd.conf
+
+dictionaries-common            mke2fs.conf          sysctl.conf
+
+dpkg                           ModemManager         sysctl.d
+
+e2scrub.conf                   modprobe.d           systemd
+
+emacs                          modules              terminfo
+
+environment                    modules-load.d       thermald
+
+environment.d                  mtab                 thunderbird
+
+ethertypes                     nanorc               timezone
+
+firefox                        netconfig            tmpfiles.d
+
+fonts                          netplan              ubuntu-advantage
+
+fprintd.conf                   network              ucf.conf
+
+fstab                          networkd-dispatcher  udev
+
+fuse.conf                      NetworkManager       udisks2
+
+fwupd                          networks             ufw
+
+gai.conf                       newt                 update-manager
+
+gdb                            nftables.conf        update-motd.d
+
+gdm3                           nsswitch.conf        update-notifier
+
+geoclue                        openvpn              UPower
+
+ghostscript                    opt                  usb_modeswitch.conf
+
+glvnd                          os-release           usb_modeswitch.d
+
+gnome                          PackageKit           vim
+
+groff                          pam.conf             vmware-tools
+
+group                          pam.d                vtrgb
+
+group-                         papersize            vulkan
+
+grub.d                         passwd               wgetrc
+
+gshadow                        passwd-              wpa_supplicant
+
+gshadow-                       pcmcia               X11
+
+gss                            perl                 xattr.conf
+
+gtk-2.0                        pki                  xdg
+
+gtk-3.0                        pm                   xml
+
+hdparm.conf                    pnm2ppa.conf         zsh_command_not_found
+
+host.conf                      polkit-1
+
+antonio@antonio-VirtualBox:/etc$ cd
+
+antonio@antonio-VirtualBox:~$ cd /etc/
+
+antonio@antonio-VirtualBox:/etc$ openssl req -new -x509 -days 365 -keyout /etc/ssl/private/certificado.key -out /etc/ssl/certs/certificado.crt.
+
+...+...........+.......+..+.+..+....+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.+.......+......+..+.............+.........+........+.+......+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.+......+.....+.+................................+.+..............+.+......+........+...+..........+.................+.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+...........+.......+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.....+...+....+.....+.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*....+.........................+...+..+......+......+......+...+....+..+....+......+...+........+.......+...+..+.+......+........+.+.....+.......+...+..+....+...+...+.........+...........+...+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+req: Can't open "/etc/ssl/private/certificado.key" for writing, Permission denied
+
+antonio@antonio-VirtualBox:/etc$ sudo openssl req -new -x509 -days 365 -keyout /etc/ssl/private/certificado.key -out /etc/ssl/certs/certificado.crt.
+
+.+........+.+...........+.........+.+...+...+.....+...+.........+.+..+....+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*......+...+..+................+..+.+.....+......+.+..+...+...+....+..+....+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.+...+.......+...+..+......+.........+...+..........+.....+.+.........+.....+......+....+...........+.+...............+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.....+..........+...+...+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*......+....+......+..+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*......+..+....+.....+....+.....+.+..+............+.............+..............+......+...+.+.....+.+........+.........+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Enter PEM pass phrase:
+
+Verifying - Enter PEM pass phrase:
+
+4067D846F07F0000:error:1400006B:UI routines:UI_process:processing error:../crypto/ui/ui_lib.c:544:while reading strings
+
+4067D846F07F0000:error:0480006D:PEM routines:PEM_def_callback:problems getting password:../crypto/pem/pem_lib.c:62:
+
+4067D846F07F0000:error:07880109:common libcrypto routines:do_ui_passphrase:interrupted or cancelled:../crypto/passphrase.c:184:
+
+4067D846F07F0000:error:1C80009F:Provider routines:p8info_to_encp8:unable to get passphrase:../providers/implementations/encode_decode/encode_key2any.c:116:
+
+antonio@antonio-VirtualBox:/etc$ cd /sites-enabled/
+
+bash: cd: /sites-enabled/: No existe el archivo o el directorio
+
+antonio@antonio-VirtualBox:/etc$ ls
+
+acpi                           hostid               ppp
+
+adduser.conf                   hostname             printcap
+
+alsa                           hosts                profile
+
+alternatives                   hosts.allow          profile.d
+
+anacrontab                     hosts.deny           protocols
+
+apache2                        hp                   pulse
+
+apg.conf                       ifplugd              python3
+
+apm                            init                 python3.10
+
+apparmor                       init.d               rc0.d
+
+apparmor.d                     initramfs-tools      rc1.d
+
+apport                         inputrc              rc2.d
+
+appstream.conf                 insserv.conf.d       rc3.d
+
+apt                            ipp-usb              rc4.d
+
+avahi                          iproute2             rc5.d
+
+bash.bashrc                    issue                rc6.d
+
+bash_completion                issue.net            rcS.d
+
+bash_completion.d              kernel               resolv.conf
+
+bindresvport.blacklist         kernel-img.conf      rmt
+
+binfmt.d                       kerneloops.conf      rpc
+
+bluetooth                      ldap                 rsyslog.conf
+
+brlapi.key                     ld.so.cache          rsyslog.d
+
+brltty                         ld.so.conf           rygel.conf
+
+brltty.conf                    ld.so.conf.d         sane.d
+
+ca-certificates                legal                security
+
+ca-certificates.conf           libao.conf           selinux
+
+ca-certificates.conf.dpkg-old  libaudit.conf        sensors3.conf
+
+chatscripts                    libblockdev          sensors.d
+
+console-setup                  libnl-3              services
+
+cracklib                       libpaper.d           sgml
+
+cron.d                         libreoffice          shadow
+
+cron.daily                     locale.alias         shadow-
+
+cron.hourly                    locale.gen           shells
+
+cron.monthly                   localtime            skel
+
+crontab                        logcheck             snmp
+
+cron.weekly                    login.defs           speech-dispatcher
+
+cups                           logrotate.conf       ssh
+
+cupshelpers                    logrotate.d          ssl
+
+dbus-1                         lsb-release          subgid
+
+dconf                          machine-id           subgid-
+
+debconf.conf                   magic                subuid
+
+debian_version                 magic.mime           subuid-
+
+default                        mailcap              sudo.conf
+
+deluser.conf                   mailcap.order        sudoers
+
+depmod.d                       manpath.config       sudoers.d
+
+dhcp                           mime.types           sudo_logsrvd.conf
+
+dictionaries-common            mke2fs.conf          sysctl.conf
+
+dpkg                           ModemManager         sysctl.d
+
+e2scrub.conf                   modprobe.d           systemd
+
+emacs                          modules              terminfo
+
+environment                    modules-load.d       thermald
+
+environment.d                  mtab                 thunderbird
+
+ethertypes                     nanorc               timezone
+
+firefox                        netconfig            tmpfiles.d
+
+fonts                          netplan              ubuntu-advantage
+
+fprintd.conf                   network              ucf.conf
+
+fstab                          networkd-dispatcher  udev
+
+fuse.conf                      NetworkManager       udisks2
+
+fwupd                          networks             ufw
+
+gai.conf                       newt                 update-manager
+
+gdb                            nftables.conf        update-motd.d
+
+gdm3                           nsswitch.conf        update-notifier
+
+geoclue                        openvpn              UPower
+
+ghostscript                    opt                  usb_modeswitch.conf
+
+glvnd                          os-release           usb_modeswitch.d
+
+gnome                          PackageKit           vim
+
+groff                          pam.conf             vmware-tools
+
+group                          pam.d                vtrgb
+
+group-                         papersize            vulkan
+
+grub.d                         passwd               wgetrc
+
+gshadow                        passwd-              wpa_supplicant
+
+gshadow-                       pcmcia               X11
+
+gss                            perl                 xattr.conf
+
+gtk-2.0                        pki                  xdg
+
+gtk-3.0                        pm                   xml
+
+hdparm.conf                    pnm2ppa.conf         zsh_command_not_found
+
+host.conf                      polkit-1
+
+antonio@antonio-VirtualBox:/etc$ sudo su
+
+root@antonio-VirtualBox:/etc# sudo openssl req -new -x509 -days 365 -keyout /etc/ssl/private/certificado.key -out /etc/ssl/certs/certificado.crt 
+
+......+..+...+......+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*....+...+..+.......+...+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*......+..+.............+...........+.+........+.........+......+.+.....+....+..............+...+.......+..+...+.+..+...+.......+..+...+....+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+............+..+.+........+....+...+..+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.....+......+.........+.....+............+.......+..+.........+......+....+.....+.........+.+..+.......+......+.....+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*...............+........+.......+..+...+.......+..+...+...............+.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Enter PEM pass phrase:
+
+Verifying - Enter PEM pass phrase:
+
+-----
+
+You are about to be asked to enter information that will be incorporated
+
+into your certificate request.
+
+What you are about to enter is what is called a Distinguished Name or a DN.
+
+There are quite a few fields but you can leave some blank
+
+For some fields there will be a default value,
+
+If you enter '.', the field will be left blank.
+
+-----
+
+Country Name (2 letter code) [AU]:ES
+
+State or Province Name (full name) [Some-State]:Granada
+
+Locality Name (eg, city) []:Granada
+
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:Instituto MEDAC Nevada
+
+Organizational Unit Name (eg, section) []:2DAW
+
+Common Name (e.g. server FQDN or YOUR name) []:localhost
+
+Email Address []:hola@example.com
+
+root@antonio-VirtualBox:/etc# ls
+
+acpi                           hostid               ppp
+
+adduser.conf                   hostname             printcap
+
+alsa                           hosts                profile
+
+alternatives                   hosts.allow          profile.d
+
+anacrontab                     hosts.deny           protocols
+
+apache2                        hp                   pulse
+
+apg.conf                       ifplugd              python3
+
+apm                            init                 python3.10
+
+apparmor                       init.d               rc0.d
+
+apparmor.d                     initramfs-tools      rc1.d
+
+apport                         inputrc              rc2.d
+
+appstream.conf                 insserv.conf.d       rc3.d
+
+apt                            ipp-usb              rc4.d
+
+avahi                          iproute2             rc5.d
+
+bash.bashrc                    issue                rc6.d
+
+bash_completion                issue.net            rcS.d
+
+bash_completion.d              kernel               resolv.conf
+
+bindresvport.blacklist         kernel-img.conf      rmt
+
+binfmt.d                       kerneloops.conf      rpc
+
+bluetooth                      ldap                 rsyslog.conf
+
+brlapi.key                     ld.so.cache          rsyslog.d
+
+brltty                         ld.so.conf           rygel.conf
+
+brltty.conf                    ld.so.conf.d         sane.d
+
+ca-certificates                legal                security
+
+ca-certificates.conf           libao.conf           selinux
+
+ca-certificates.conf.dpkg-old  libaudit.conf        sensors3.conf
+
+chatscripts                    libblockdev          sensors.d
+
+console-setup                  libnl-3              services
+
+cracklib                       libpaper.d           sgml
+
+cron.d                         libreoffice          shadow
+
+cron.daily                     locale.alias         shadow-
+
+cron.hourly                    locale.gen           shells
+
+cron.monthly                   localtime            skel
+
+crontab                        logcheck             snmp
+
+cron.weekly                    login.defs           speech-dispatcher
+
+cups                           logrotate.conf       ssh
+
+cupshelpers                    logrotate.d          ssl
+
+dbus-1                         lsb-release          subgid
+
+dconf                          machine-id           subgid-
+
+debconf.conf                   magic                subuid
+
+debian_version                 magic.mime           subuid-
+
+default                        mailcap              sudo.conf
+
+deluser.conf                   mailcap.order        sudoers
+
+depmod.d                       manpath.config       sudoers.d
+
+dhcp                           mime.types           sudo_logsrvd.conf
+
+dictionaries-common            mke2fs.conf          sysctl.conf
+
+dpkg                           ModemManager         sysctl.d
+
+e2scrub.conf                   modprobe.d           systemd
+
+emacs                          modules              terminfo
+
+environment                    modules-load.d       thermald
+
+environment.d                  mtab                 thunderbird
+
+ethertypes                     nanorc               timezone
+
+firefox                        netconfig            tmpfiles.d
+
+fonts                          netplan              ubuntu-advantage
+
+fprintd.conf                   network              ucf.conf
+
+fstab                          networkd-dispatcher  udev
+
+fuse.conf                      NetworkManager       udisks2
+
+fwupd                          networks             ufw
+
+gai.conf                       newt                 update-manager
+
+gdb                            nftables.conf        update-motd.d
+
+gdm3                           nsswitch.conf        update-notifier
+
+geoclue                        openvpn              UPower
+
+ghostscript                    opt                  usb_modeswitch.conf
+
+glvnd                          os-release           usb_modeswitch.d
+
+gnome                          PackageKit           vim
+
+groff                          pam.conf             vmware-tools
+
+group                          pam.d                vtrgb
+
+group-                         papersize            vulkan
+
+grub.d                         passwd               wgetrc
+
+gshadow                        passwd-              wpa_supplicant
+
+gshadow-                       pcmcia               X11
+
+gss                            perl                 xattr.conf
+
+gtk-2.0                        pki                  xdg
+
+gtk-3.0                        pm                   xml
+
+hdparm.conf                    pnm2ppa.conf         zsh_command_not_found
+
+host.conf                      polkit-1
+
+root@antonio-VirtualBox:/etc# cd ss
+
+ssh/ ssl/ 
+
+root@antonio-VirtualBox:/etc# cd ssl/
+
+root@antonio-VirtualBox:/etc/ssl# ls
+
+certs  openssl.cnf  private
+
+root@antonio-VirtualBox:/etc/ssl# cd certs/
+
+root@antonio-VirtualBox:/etc/ssl/certs# ls
+
+ 002c0b4f.0
+
+ 02265526.0
+
+ 062cdee6.0
+
+ 064e0aa9.0
+
+ 06dc52d5.0
+
+ 08063a00.0
+
+ 09789157.0
+
+ 0a775a30.0
+
+ 0b1b94ef.0
+
+ 0b9bc432.0
+
+ 0bf05006.0
+
+ 0c31d5ce.0
+
+ 0f5dc4f3.0
+
+ 0f6fa695.0
+
+ 1001acf7.0
+
+ 106f3e4d.0
+
+ 14bc7599.0
+
+ 18856ac4.0
+
+ 1c7314a2.0
+
+ 1d3472b9.0
+
+ 1e08bfd1.0
+
+ 1e09d511.0
+
+ 244b5494.0
+
+ 2923b3f9.0
+
+ 2ae6433e.0
+
+ 2b349938.0
+
+ 32888f65.0
+
+ 3513523f.0
+
+ 3bde41ac.0
+
+ 3bde41ac.1
+
+ 3e45d192.0
+
+ 3fb36b73.0
+
+ 40193066.0
+
+ 4042bcee.0
+
+ 40547a79.0
+
+ 406c9bb1.0
+
+ 48bec511.0
+
+ 4b718d9b.0
+
+ 4bfab552.0
+
+ 4f316efb.0
+
+ 5273a94c.0
+
+ 5443e9e3.0
+
+ 54657681.0
+
+ 57bcb2da.0
+
+ 5860aaa6.0
+
+ 5931b5bc.0
+
+ 5a7722fb.0
+
+ 5ad8a5d6.0
+
+ 5cd81ad7.0
+
+ 5e98733a.0
+
+ 5f15c80c.0
+
+ 5f618aec.0
+
+ 607986c7.0
+
+ 626dceaf.0
+
+ 653b494a.0
+
+ 66445960.0
+
+ 68dd7389.0
+
+ 6b99d060.0
+
+ 6d41d539.0
+
+ 6fa5da56.0
+
+ 706f604c.0
+
+ 749e9e03.0
+
+ 75d1b2ed.0
+
+ 76faf6c0.0
+
+ 7719f463.0
+
+ 773e07ad.0
+
+ 7a3adc42.0
+
+ 7a780d93.0
+
+ 7f3d5d1d.0
+
+ 8160b96c.0
+
+ 8508e720.0
+
+ 8cb5ee0f.0
+
+ 8d86cdd1.0
+
+ 8d89cda1.0
+
+ 8f103249.0
+
+ 90c5a3c8.0
+
+ 930ac5d2.0
+
+ 93bc0acc.0
+
+ 9482e63a.0
+
+ 9846683b.0
+
+ 988a38cb.0
+
+ 9b5697b0.0
+
+ 9c8dfbd4.0
+
+ 9d04f354.0
+
+ 9ef4a08a.0
+
+ 9f727ac7.0
+
+ a3418fda.0
+
+ a94d09e5.0
+
+ ACCVRAIZ1.pem
+
+ AC_RAIZ_FNMT-RCM.pem
+
+ AC_RAIZ_FNMT-RCM_SERVIDORES_SEGUROS.pem
+
+ Actalis_Authentication_Root_CA.pem
+
+ aee5f10d.0
+
+ AffirmTrust_Commercial.pem
+
+ AffirmTrust_Networking.pem
+
+ AffirmTrust_Premium_ECC.pem
+
+ AffirmTrust_Premium.pem
+
+ Amazon_Root_CA_1.pem
+
+ Amazon_Root_CA_2.pem
+
+ Amazon_Root_CA_3.pem
+
+ Amazon_Root_CA_4.pem
+
+ ANF_Secure_Server_Root_CA.pem
+
+ Atos_TrustedRoot_2011.pem
+
+ Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068_2.pem
+
+ Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem
+
+ b0e59380.0
+
+ b1159c4c.0
+
+ b433981b.0
+
+ b66938e9.0
+
+ b727005e.0
+
+ b7a5b843.0
+
+ b81b93f0.0
+
+ Baltimore_CyberTrust_Root.pem
+
+ bf53fb88.0
+
+ Buypass_Class_2_Root_CA.pem
+
+ Buypass_Class_3_Root_CA.pem
+
+ c01eb047.0
+
+ c28a8a30.0
+
+ ca6e4ad9.0
+
+ ca-certificates.crt
+
+ CA_Disig_Root_R2.pem
+
+ cbf06781.0
+
+ cc450945.0
+
+ cd58d51e.0
+
+ cd8c0d63.0
+
+ ce5e74ef.0
+
+ Certainly_Root_E1.pem
+
+ Certainly_Root_R1.pem
+
+ certificado.crt
+
+ Certigna.pem
+
+ Certigna_Root_CA.pem
+
+ certSIGN_Root_CA_G2.pem
+
+ certSIGN_ROOT_CA.pem
+
+ Certum_EC-384_CA.pem
+
+ Certum_Trusted_Network_CA_2.pem
+
+ Certum_Trusted_Network_CA.pem
+
+ Certum_Trusted_Root_CA.pem
+
+ CFCA_EV_ROOT.pem
+
+ Comodo_AAA_Services_root.pem
+
+ COMODO_Certification_Authority.pem
+
+ COMODO_ECC_Certification_Authority.pem
+
+ COMODO_RSA_Certification_Authority.pem
+
+ d4dae3dd.0
+
+ d52c538d.0
+
+ d6325660.0
+
+ d7e8dc79.0
+
+ d887a5bb.0
+
+ dc4d6a89.0
+
+ dd8e9d41.0
+
+ de6d66f3.0
+
+ DigiCert_Assured_ID_Root_CA.pem
+
+ DigiCert_Assured_ID_Root_G2.pem
+
+ DigiCert_Assured_ID_Root_G3.pem
+
+ DigiCert_Global_Root_CA.pem
+
+ DigiCert_Global_Root_G2.pem
+
+ DigiCert_Global_Root_G3.pem
+
+ DigiCert_High_Assurance_EV_Root_CA.pem
+
+ DigiCert_TLS_ECC_P384_Root_G5.pem
+
+ DigiCert_TLS_RSA4096_Root_G5.pem
+
+ DigiCert_Trusted_Root_G4.pem
+
+ D-TRUST_BR_Root_CA_1_2020.pem
+
+ D-TRUST_EV_Root_CA_1_2020.pem
+
+ D-TRUST_Root_Class_3_CA_2_2009.pem
+
+ D-TRUST_Root_Class_3_CA_2_EV_2009.pem
+
+ e113c810.0
+
+ e18bfb83.0
+
+ e35234b1.0
+
+ e36a6752.0
+
+ e73d606e.0
+
+ e868b802.0
+
+ e8de2f56.0
+
+ ecccd8db.0
+
+ ed858448.0
+
+ ee64a828.0
+
+ eed8c118.0
+
+ ef954a4e.0
+
+ emSign_ECC_Root_CA_-_C3.pem
+
+ emSign_ECC_Root_CA_-_G3.pem
+
+ emSign_Root_CA_-_C1.pem
+
+ emSign_Root_CA_-_G1.pem
+
+ Entrust.net_Premium_2048_Secure_Server_CA.pem
+
+ Entrust_Root_Certification_Authority_-_EC1.pem
+
+ Entrust_Root_Certification_Authority_-_G2.pem
+
+ Entrust_Root_Certification_Authority_-_G4.pem
+
+ Entrust_Root_Certification_Authority.pem
+
+ ePKI_Root_Certification_Authority.pem
+
+ e-Szigno_Root_CA_2017.pem
+
+ E-Tugra_Certification_Authority.pem
+
+ E-Tugra_Global_Root_CA_ECC_v3.pem
+
+ E-Tugra_Global_Root_CA_RSA_v3.pem
+
+ f081611a.0
+
+ f0c70a8d.0
+
+ f249de83.0
+
+ f30dd6ad.0
+
+ f3377b1b.0
+
+ f387163d.0
+
+ f39fc864.0
+
+ f51bb24c.0
+
+ fa5da96b.0
+
+ fc5a8f99.0
+
+ fd64f3fc.0
+
+ fe8a2cd8.0
+
+ feffd413.0
+
+ ff34af3f.0
+
+ GDCA_TrustAUTH_R5_ROOT.pem
+
+ GlobalSign_ECC_Root_CA_-_R4.pem
+
+ GlobalSign_ECC_Root_CA_-_R5.pem
+
+ GlobalSign_Root_CA.pem
+
+ GlobalSign_Root_CA_-_R3.pem
+
+ GlobalSign_Root_CA_-_R6.pem
+
+ GlobalSign_Root_E46.pem
+
+ GlobalSign_Root_R46.pem
+
+ GLOBALTRUST_2020.pem
+
+ Go_Daddy_Class_2_CA.pem
+
+ Go_Daddy_Root_Certificate_Authority_-_G2.pem
+
+ GTS_Root_R1.pem
+
+ GTS_Root_R2.pem
+
+ GTS_Root_R3.pem
+
+ GTS_Root_R4.pem
+
+ HARICA_TLS_ECC_Root_CA_2021.pem
+
+ HARICA_TLS_RSA_Root_CA_2021.pem
+
+ Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.pem
+
+ Hellenic_Academic_and_Research_Institutions_RootCA_2015.pem
+
+ HiPKI_Root_CA_-_G1.pem
+
+ Hongkong_Post_Root_CA_1.pem
+
+ Hongkong_Post_Root_CA_3.pem
+
+ IdenTrust_Commercial_Root_CA_1.pem
+
+ IdenTrust_Public_Sector_Root_CA_1.pem
+
+ ISRG_Root_X1.pem
+
+ ISRG_Root_X2.pem
+
+ Izenpe.com.pem
+
+ Microsec_e-Szigno_Root_CA_2009.pem
+
+ Microsoft_ECC_Root_Certificate_Authority_2017.pem
+
+ Microsoft_RSA_Root_Certificate_Authority_2017.pem
+
+ NAVER_Global_Root_Certification_Authority.pem
+
+'NetLock_Arany_=Class_Gold=_Főtanúsítvány.pem'
+
+ OISTE_WISeKey_Global_Root_GB_CA.pem
+
+ OISTE_WISeKey_Global_Root_GC_CA.pem
+
+ QuoVadis_Root_CA_1_G3.pem
+
+ QuoVadis_Root_CA_2_G3.pem
+
+ QuoVadis_Root_CA_2.pem
+
+ QuoVadis_Root_CA_3_G3.pem
+
+ QuoVadis_Root_CA_3.pem
+
+ Secure_Global_CA.pem
+
+ SecureSign_RootCA11.pem
+
+ SecureTrust_CA.pem
+
+ Security_Communication_ECC_RootCA1.pem
+
+ Security_Communication_RootCA2.pem
+
+ Security_Communication_RootCA3.pem
+
+ Security_Communication_Root_CA.pem
+
+ ssl-cert-snakeoil.pem
+
+ SSL.com_EV_Root_Certification_Authority_ECC.pem
+
+ SSL.com_EV_Root_Certification_Authority_RSA_R2.pem
+
+ SSL.com_Root_Certification_Authority_ECC.pem
+
+ SSL.com_Root_Certification_Authority_RSA.pem
+
+ Starfield_Class_2_CA.pem
+
+ Starfield_Root_Certificate_Authority_-_G2.pem
+
+ Starfield_Services_Root_Certificate_Authority_-_G2.pem
+
+ SwissSign_Gold_CA_-_G2.pem
+
+ SwissSign_Silver_CA_-_G2.pem
+
+ SZAFIR_ROOT_CA2.pem
+
+ Telia_Root_CA_v2.pem
+
+ TeliaSonera_Root_CA_v1.pem
+
+ Trustwave_Global_Certification_Authority.pem
+
+ Trustwave_Global_ECC_P256_Certification_Authority.pem
+
+ Trustwave_Global_ECC_P384_Certification_Authority.pem
+
+ T-TeleSec_GlobalRoot_Class_2.pem
+
+ T-TeleSec_GlobalRoot_Class_3.pem
+
+ TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.pem
+
+ TunTrust_Root_CA.pem
+
+ TWCA_Global_Root_CA.pem
+
+ TWCA_Root_Certification_Authority.pem
+
+ UCA_Extended_Validation_Root.pem
+
+ UCA_Global_G2_Root.pem
+
+ USERTrust_ECC_Certification_Authority.pem
+
+ USERTrust_RSA_Certification_Authority.pem
+
+ vTrus_ECC_Root_CA.pem
+
+ vTrus_Root_CA.pem
+
+ XRamp_Global_CA_Root.pem
+
+root@antonio-VirtualBox:/etc/ssl/certs# nano certificado.crt 
+
+root@antonio-VirtualBox:/etc/ssl/certs# cd .
+
+root@antonio-VirtualBox:/etc/ssl/certs# cd ..
+
+root@antonio-VirtualBox:/etc/ssl# cd private/
+
+root@antonio-VirtualBox:/etc/ssl/private# ls
+
+certificado.key  ssl-cert-snakeoil.key
+
+root@antonio-VirtualBox:/etc/ssl/private# nano certificado.key 
+
+root@antonio-VirtualBox:/etc/ssl/private# cd /etc/apache2/
+
+root@antonio-VirtualBox:/etc/apache2# ls
+
+apache2.conf    conf-enabled  magic           mods-enabled  sites-available
+
+conf-available  envvars       mods-available  ports.conf    sites-enabled
+
+root@antonio-VirtualBox:/etc/apache2# cd sites-available/
+
+root@antonio-VirtualBox:/etc/apache2/sites-available# ls
+
+000-default.conf  default-ssl.conf
+
+root@antonio-VirtualBox:/etc/apache2/sites-available# nano 000-default.conf 
+
+root@antonio-VirtualBox:/etc/apache2/sites-available# nano default-ssl.conf 
+
+root@antonio-VirtualBox:/etc/apache2/sites-available# ufw allow 443
+
+Reglas actualizadas
+
+Reglas actualizadas (v6)
+
+root@antonio-VirtualBox:/etc/apache2/sites-available# ufw allow 80
+
+Reglas actualizadas
+
+Reglas actualizadas (v6)
+
+root@antonio-VirtualBox:/etc/apache2/sites-available# a2ensite 000-default.conf 
+
+Site 000-default already enabled
+
+root@antonio-VirtualBox:/etc/apache2/sites-available# a2ensite default-ssl.conf 
+
+Enabling site default-ssl.
+
+To activate the new configuration, you need to run:
+
+  systemctl reload apache2
+
+root@antonio-VirtualBox:/etc/apache2/sites-available# systemctl restart apache2
+
+root@antonio-VirtualBox:/etc/apache2/sites-available# nano default-ssl.conf 
+
+root@antonio-VirtualBox:/etc/apache2/sites-available# a2enmod ssl
+
+Considering dependency setenvif for ssl:
+
+Module setenvif already enabled
+
+Considering dependency mime for ssl:
+
+Module mime already enabled
+
+Considering dependency socache_shmcb for ssl:
+
+Enabling module socache_shmcb.
+
+Enabling module ssl.
+
+See /usr/share/doc/apache2/README.Debian.gz on how to configure SSL and create self-signed certificates.
+
+To activate the new configuration, you need to run:
+
+  systemctl restart apache2
+
+root@antonio-VirtualBox:/etc/apache2/sites-available# systemctl restart apache2
+
+🔐 Enter passphrase for SSL/TLS keys for 127.0.1.1:443 (RSA): (press TAB for no ****  
+
+root@antonio-VirtualBox:/etc/apache2/sites-available# 
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generador de Banderas</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            width: 80px;
+            height: 160px;
+        }
+    </style>
+    <script>
+        const colores = ['red', 'yellow', 'green', 'white', 'blue', 'brown', 'pink', 'black'];
+        function generarBandera() {
+            const franjas = parseInt(document.getElementById("franjas").value);
+            const bandera = document.getElementById("bandera");
+            bandera.innerHTML = '';
+            for (let i = 0; i < franjas; i++) {
+                const color = colores[Math.floor(Math.random() * colores.length)];
+                const celda = document.createElement("td");
+                celda.style.backgroundColor = color;
+                bandera.appendChild(celda);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Bandera con Colores Aleatorios</h1>
+    
+    <p>Introduce el número de franjas de la bandera (1 - 5):</p>
+    <input type="text" id="franjas" min="1" max="5">
+    <button onclick="generarBandera()">Generar Bandera</button>
+    <h3>Resultado</h3>
+    <table id="bandera"></table>
+</body>
+</html>

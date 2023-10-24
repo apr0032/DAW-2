@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 1</title>
+    <script>
+        function sumaParcial() {
+            const arrais = document.getElementById("arrais").value;
+            const array = arrais.split(',').map(Number);
+            if (array.length === 0) {
+                document.getElementById("resultado").textContent = "Por favor, ingrese un array válido.";
+                return;
+            }
+            let suma = 0;
+            const sumaParcial = [];
+            for (const elemento of array) {
+                suma += elemento;
+                sumaParcial.push(suma);
+            }
+            document.getElementById("resultado").textContent = sumaParcial.join(', ');
+        }
+    </script>
+</head>
+<body>
+    <h1>Suma Parcial Array</h1>
+    <p>Introduce los valores separados por comas (1,2,3,4,5):</p>
+    <input type="text" id="arrais" placeholder="1,2,3,4,5,6,7,8,9">
+    <button onclick="sumaParcial()">Calcular Suma Parcial</button>
+    <p>Resultado:</p>
+    <div id="resultado"></div>
+</body>
+</html>

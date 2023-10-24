@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 2</title>
+    <script>
+        function countBy(X, Y) {
+            if (X < 0 || Y < 0) {
+                return []; // (vacío)
+            }
+            const result = [];
+            for (let i = 1; i <= Y; i++) {
+                result.push(X * i); // ultimo múltiplo X
+            }
+            return result;
+        }
+        function calcularMultiplos() {
+            const X = parseInt(document.getElementById("inputX").value);
+            const Y = parseInt(document.getElementById("inputY").value);
+            const multiples = countBy(X, Y);
+            document.getElementById("resultado").textContent = multiples.join(', ');
+        }
+    </script>
+</head>
+<body>
+    <h1>countBy</h1>
+    <p>Introduce dos números enteros positivos:</p>
+    <input type="text" id="inputX" placeholder="X">
+    <input type="text" id="inputY" placeholder="Y">
+    <button onclick="calcularMultiplos()">Calcular Múltiplos</button>
+    <p>Resultado:</p>
+    <div id="resultado"></div>
+</body>
+</html>
