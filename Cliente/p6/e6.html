@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 6</title>
+    <script>
+        const colores = ['red', 'yellow', 'green', 'white', 'blue', 'brown', 'pink', 'black'];
+        const palabras = [];
+        function agregar() {
+            const palabra = document.getElementById("palabritas").value;
+            if (palabra) {
+                palabras.push(palabra);
+                document.getElementById("palabritas").value = "";
+                document.getElementById("mensaje").textContent = `"${palabra}" agregado`;
+            }
+        }
+        function ordenar() {
+            const varColores = palabras.filter(palabra => colores.includes(palabra));
+            const palabrasX = palabras.filter(palabra => !colores.includes(palabra));
+
+            const resultado = varColores.concat(palabrasX);
+            mostrarResultado(resultado);
+        }
+        function mostrarResultado(array) {
+            const resultado2 = document.getElementById("resultado");
+            resultado2.innerHTML = ""; //limpia
+            array.forEach(palabra => {
+                const varAux = document.createElement("li");
+                varAux.textContent = palabra;
+                resultado2.appendChild(varAux);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Ordenar Array</h1>
+    <p>Introduce 8 palabras (colores y no colores):</p>
+    <input type="text" id="palabritas" placeholder="Introduzca una palabra">
+    <button onclick="agregar()">Agregar Palabra</button>
+    <p id="mensaje"></p>
+    <h2>Resultado</h2>
+    <ul id="resultado"></ul>
+    <button onclick="ordenar()">Ordenar Palabras</button>
+</body>
+</html>
