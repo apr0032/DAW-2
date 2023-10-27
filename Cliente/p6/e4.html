@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Elementos Unicos en Dos Arrays</title>
+</head>
+<body>
+    <p>Ingresa los arrays separados por comas y luego haz clic en el botón para obtener los elementos únicos:</p>
+
+    <label for="array1">Array 1:</label>
+    <input type="text" id="array1"><br>
+
+    <label for="array2">Array 2:</label>
+    <input type="text" id="array2"><br>
+
+    <button onclick="elementosUnicosEnTotal()">Obtener Elementos Únicos</button>
+
+    <div id="resultado"></div>
+
+    <script>
+function elementosUnicosEnTotal() {
+    const array1Value = document.getElementById("array1").value;
+    const array2Value = document.getElementById("array2").value;
+
+    const array1 = array1Value.split(",").map(item => item.trim());
+    const array2 = array2Value.split(",").map(item => item.trim());
+
+    const combinedArray = array1.concat(array2);
+
+    const elementCount = {};
+   
+    combinedArray.forEach(elemento => {
+        elementCount[elemento] = (elementCount[elemento] || 0) + 1;
+    });
+
+    const  ElementosUnicos = Object.keys(elementCount).filter(elemento => elementCount[elemento] === 1);
+
+    const unicosArray1 = array1.filter(elemento => ElementosUnicos.includes(elemento));
+    const unicosArray2 = array2.filter(elemento => ElementosUnicos.includes(elemento));
+
+    const resultArray = unicosArray1.concat(unicosArray2);
+
+    document.getElementById("resultado").innerHTML = JSON.stringify(resultArray);
+}
+    </script>
+</body>
+</html>
+
