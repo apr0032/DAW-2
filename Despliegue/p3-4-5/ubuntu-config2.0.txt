@@ -1,0 +1,37 @@
+sudo apt-get install openssl
+sudo apt update
+sudo apt install apache2
+sudo systemctl enable apache2
+cd Escritorio/
+cd /etc/
+sudo openssl req -new -x509 -days 365 -keyout /etc/ssl/private/certificado.key -out /etc/ssl/certs/certificado.crt 
+-----------------------------------
+Enter PEM pass phrase:
+Verifying - Enter PEM pass phrase:
+-----
+-----
+-----------------------------------
+
+
+
+cd /etc/apache2/
+cd sites-available/
+nano 000-default.conf 
+quitamos comentario a server name y ponemos ServerName localhost
+
+nano default-ssl.conf 
+cambiar nombbres archivos
+SSLCertificateFile      /etc/ssl/certs/certificado.crt
+SSLCertificateKeyFile /etc/ssl/private/certificado.key
+
+
+
+ufw allow 443
+ufw allow 80
+a2ensite 000-default.conf 
+a2ensite default-ssl.conf 
+systemctl restart apache2 
+pide key
+
+a2enmod ssl
+systemctl restart apache2
