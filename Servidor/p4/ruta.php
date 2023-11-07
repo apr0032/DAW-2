@@ -6,6 +6,7 @@ if (!isset($_SESSION['username'])) { //comprobar usuario autenticado
     exit();
 }
 //mostrar ruta actual
-$current_directory = getcwd();
-echo "Ruta actual: " . $current_directory . "<br> <a href='menu.php'>Volver al menú</a>";
+$urlActual = getcwd();
+echo "Ruta actual: " . $urlActual . "<br> <a href='menu.php'>Volver al menú</a>";
+
 ?>
