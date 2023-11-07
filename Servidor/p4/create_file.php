@@ -11,11 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $contenido = $_POST['contenido'];
     $permisos = intval($_POST['permisos'], 8); // convertir permisos en octal a entero (no entiendo lo de permisos en octal)
 
-    $current_directory = getcwd();
-    $filepath = $current_directory . '/' . $nombreArchivo;
+    $urlActual = getcwd();
+    $rutaArchivo = $urlActual . '/' . $nombreArchivo;
 
-    if (file_put_contents($filepath, $contenido) !== false) {
-        chmod($filepath, $permisos); // establecer los permisos
+    if (file_put_contents($rutaArchivo, $contenido) !== false) {
+        chmod($rutaArchivo, $permisos); // establecer los permisos
         echo "El archivo '$nombreArchivo' se ha creado correctamente." . "<br> <a href='menu.php'>Volver al menú</a>";
     } else {
         echo "No se pudo crear el archivo." . "<br> <a href='menu.php'>Volver al menú</a>";
