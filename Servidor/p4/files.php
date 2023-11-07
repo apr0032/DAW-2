@@ -6,15 +6,15 @@ if (!isset($_SESSION['username'])) { //comprobar usuario autenticado
     exit();
 }
 
-if (isset($_POST['filename'])) { //comprobar archivo
-    $filename = $_POST['filename'];
-    $current_directory = getcwd();
-    $files = scandir($current_directory);
+if (isset($_POST['nombreArchivo'])) { //comprobar archivo
+    $nombreArchivo = $_POST['nombreArchivo'];
+    $urlActual = getcwd();
+    $varX = scandir($urlActual);
 
-    if (in_array($filename, $files)) {
-        echo "El archivo '$filename' se encontró en el directorio actual." . "<br> <a href='menu.php'>Volver al menú</a>";
+    if (in_array($nombreArchivo, $varX)) {
+        echo "El archivo '$nombreArchivo' se encontró en el directorio actual." . "<br> <a href='menu.php'>Volver al menú</a>";
     } else {
-        echo "El archivo '$filename' no se encontró en el directorio actual." . "<br> <a href='menu.php'>Volver al menú</a>";
+        echo "El archivo '$nombreArchivo' no se encontró en el directorio actual." . "<br> <a href='menu.php'>Volver al menú</a>";
     }
 } else {
     //formulario
