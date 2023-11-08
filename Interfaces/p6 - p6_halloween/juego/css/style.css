@@ -1,0 +1,59 @@
+img.card-img-top {
+    object-fit: cover;
+    cursor: pointer;
+    max-height: 150px !important;
+    max-width: 150px !important;
+}
+
+img.card-img-top.girar {
+    animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    /*Para la barra inferior fija*/
+    padding-bottom: 70px;
+    background-image: url("https://us.123rf.com/450wm/min6939/min69391609/min6939160900076/62610959-halloween-negro-patr%C3%B3n-festivo-sin-fisuras.jpg?ver=6");
+    color: white;
+}
+
+button {
+    margin-left: 47%;
+    border-radius: 50px;
+    /* Esto hace que el botón sea redondeado */
+    background-color: #3498db;
+    /* Color de fondo del botón */
+    color: #fff;
+    /* Color del texto del botón */
+    padding: 10px 20px;
+    /* Espaciado interno del botón */
+    font-size: 16px;
+    /* Tamaño del texto */
+    border: none;
+    /* Elimina el borde del botón */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
+}
+
+h1{
+    text-shadow: 0 0 10px rgb(255, 123, 0), 0 0 10px rgb(255, 123, 0), 0 0 10px rgb(255, 123, 0);
+}
+
+.juego{
+    margin-left: 30%;
+    margin-top: 15%;
+}
+
+.h5{
+    margin-left: 5%;
+    text-shadow: 0 0 10px rgb(255, 123, 0), 0 0 10px rgb(255, 123, 0), 0 0 10px rgb(255, 123, 0);
+}

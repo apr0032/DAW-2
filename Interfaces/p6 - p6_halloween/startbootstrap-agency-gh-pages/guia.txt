@@ -1,0 +1,13 @@
+¿Diseño de un wireframe sencillo? ¿Crees que te hace falta o no? 
+La página debería contener algunas secciones, por ejemplo "Inicio" o "Galería de Fotos".
+La web debe tener un diseño coherente y ser consistente (colores de la marca, que no varíe mucho de una sección a otra).
+Incluir elementos interactivos relacionados con la fiesta (animaciones de calabazas, murciélagos, fantasmas y cosas así, podéis darle vida con JS).
+
+Sugerencias Adicionales:
+
+Agregar una sección de "Juegos" con al menos un juego simple relacionado con Halloween (JavaScript).
+Incluir una sección de "Recetas" con ideas para preparar postres o comidas temáticas.
+Utilizar imágenes y gráficos relacionados con Halloween para mejorar el diseño.
+
+Añadir funcionalidades Javascript, se valorará la creatividad.
+(Por confirmar) Añadir un formulario de contacto para recibir comentarios o sugerencias de los usuarios (PhP).

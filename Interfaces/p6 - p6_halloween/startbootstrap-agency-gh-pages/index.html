@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Halloween</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        .contenedorEstilo {
+            text-shadow: 0 0 50px rgb(255, 123, 0), 0 0 50px rgb(255, 123, 0), 0 0 50px rgb(255, 123, 0);
+        }
+
+        .contenedorgaleria {
+            position: relative;
+        }
+
+        .titulaso {
+            position: absolute;
+            top: 80px;
+        }
+
+        .custom-container:hover {
+            background-color: rgb(230, 159, 8, 0);
+            transform: scale(1.4);
+            box-shadow: 0 0 50px rgb(230, 159, 8);
+            transition: 1.2s;
+            animation: moverColor 4s linear infinite;
+            animation-delay: 1.2s;
+        }
+
+        @keyframes moverColor {
+            0% {
+                box-shadow: 0 0 50px rgb(230, 159, 8);
+            }
+
+            50% {
+                box-shadow: 0 0 50px rgb(172, 64, 1);
+            }
+
+            75% {
+                box-shadow: 0 0 50px rgb(180, 96, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 50px rgb(230, 159, 8);
+            }
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <!-- Calabazas fondo -->
+    <div id="container"></div>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar" href="#page-top"><img
+                    src="https://images.vexels.com/media/users/3/259068/isolated/preview/3505dabf5402b90ef63641725d54b5c7-icono-de-calabaza-de-halloween.png"
+                    alt="..." style="max-width: 100px;" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Recetas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../juego/index.html">Juego</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container contenedorEstilo">
+            <div class="masthead-subheading">Flipas</div>
+            <div class="masthead-heading text-uppercase">Halloween</div>
+            <a class="btn btn-danger btn-xl text-uppercase" href="../juego/index.html">Ir al juego</a>
+        </div>
+    </header>
+    <!-- Galeria-->
+    <section
+        class="container-fluid d-flex flex-wrap justify-content-around align-items-center text-white contenedorgaleria"
+        id="galeria">
+        <div class="text-center titulaso">
+            <h2 class="section-heading text-uppercase text-white">Services</h2>
+        </div>
+        <div class="m-1 text-center custom-container que">
+            <img class="d-block img-fluid mx-auto"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmw6XhoD8-CF6pZiC4Ku4nFLRI_7dWt14AnI3eTNY4rAhmo8CGWcpL87hOz8W2C2bpHmo&usqp=CAU"
+                alt="">
+        </div>
+        <div class="m-1 text-center custom-container que">
+            <img class="d-block img-fluid mx-auto"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW-14vbctHTOkkVJ20wRoekbguidBsvtRsWw&usqp=CAU"
+                alt="">
+        </div>
+        <div class="m-1 text-center custom-container que">
+            <img class="d-block img-fluid mx-auto"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiKfe5QEEzW3y7SSjV1mHZzsPkT3JX0FFipg&usqp=CAU"
+                alt="">
+        </div>
+        <div class="m-1 text-center custom-container que">
+            <img class="d-block img-fluid mx-auto"
+                src="https://ih0.redbubble.net/image.4318224826.3233/raf,360x360,075,t,fafafa:ca443f4786.jpg"
+                width="250px" height="250px" alt="">
+        </div>
+    </section>
+    <!-- Portfolio Grid-->
+    <section class="container-fluid page-section" id="portfolio">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase text-white">Recetas</h2>
+                <br>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Portfolio item 1-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://i.blogs.es/147b1f/receta-huevos-diablo-halloween/1366_2000.jpg"
+                                alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Huevos araña y demonio</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Portfolio item 2-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://i.blogs.es/73c446/dip-cementerio-para-halloween/1366_2000.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Dip cementerio</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Portfolio item 3-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="https://i.blogs.es/83419e/quesadillas/1366_2000.jpg"
+                                alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Quesadillas calabaza</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    </div>
+    <!-- Aqui acaba y vuelve a empezar abajo en portfolio-->
+    <!-- Contact-->
+    <section class="page-section" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Contactanos</h2>
+                <h3 class="section-subheading text-muted"></h3>
+            </div>
+            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                <div class="row align-items-stretch mb-5">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <!-- Name input-->
+                            <input class="form-control" id="name" type="text" placeholder="Tu nombre *"
+                                data-sb-validations="required" />
+                            <div class="invalid-feedback" data-sb-feedback="name:required">Introduce un nombre.</div>
+                        </div>
+                        <div class="form-group">
+                            <!-- Email address input-->
+                            <input class="form-control" id="email" type="email" placeholder="Tu Email *"
+                                data-sb-validations="required,email" />
+                            <div class="invalid-feedback" data-sb-feedback="email:required">Introduce un Email.</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">Email no valido.</div>
+                        </div>
+                        <div class="form-group mb-md-0">
+                            <!-- Phone number input-->
+                            <input class="form-control" id="phone" type="tel" placeholder="Tu teléfono *"
+                                data-sb-validations="required" />
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">Introduce un número de
+                                teléfono.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group form-group-textarea mb-md-0">
+                            <!-- Message input-->
+                            <textarea class="form-control" id="message" placeholder="Mensaje *"
+                                data-sb-validations="required"></textarea>
+                            <div class="invalid-feedback" data-sb-feedback="message:required">Introduce un mensaje.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-none" id="submitSuccessMessage">
+                    <div class="text-center text-white mb-3">
+                        <div class="fw-bolder">Su petición se ha enviado con éxito.</div>
+                        En breve recibirá una respuesta al correo indicado.
+                    </div>
+                </div>
+                <!-- Submit error message-->
+                <!---->
+                <!-- This is what your users will see when there is-->
+                <!-- an error submitting the form-->
+                <div class="d-none" id="submitErrorMessage">
+                    <div class="text-center text-danger mb-3">Error al enviar el mensaje</div>
+                </div>
+                <!-- Submit Button-->
+                <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled"
+                        id="submitButton" type="submit">Enviar mensaje</button></div>
+            </form>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-start">Antonio Pérez y Carlos Montero &copy;</div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <a class="btn btn-dark btn-social mx-2" href="https://www.youtube.com/watch?v=xi3jbdMBLbw"
+                        aria-label="Un video mas mi gente mencanta ta vaina"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                    <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Portfolio-->
+    <!-- Portfolio item 1 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Huevos araña y demonio</h2>
+                                <img class="img-fluid d-block mx-auto"
+                                    src="https://i.blogs.es/147b1f/receta-huevos-diablo-halloween/1366_2000.jpg"
+                                    alt="..." />
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Ingredientes:</strong>
+                                        Para 6 unidades:<br>
+                                        Huevo duro o cocido 3<br>
+                                        Bonito 50 g<br>
+                                        Salsa de tomate 2 cucharadas<br>
+                                        Mayonesa 4 cucharadas<br>
+                                        Aceitunas negras<br>
+                                        Pimiento rojo.
+                                    </li>
+                                    <br><br>
+                                    <li>
+                                        <strong>Descripcion:</strong>
+                                        Humedecemos con agua fría la hoja de un cuchillo y partimos por la mitad los
+                                        tres huevos cocidos. Sacamos las yemas y las depositamos en el vaso de la
+                                        batidora, junto al bonito, la salsa de tomate y la mayonesa. Trituramos con la
+                                        túrmix hasta obtener un puré fino. <br>
+
+                                        Rellenamos los huecos de cada mitad de huevo con la mezcla, podemos ayudarnos de
+                                        una manga pastelera para que quede mejor. Para hacer las arañas colocamos una
+                                        aceituna negra en el centro de cada huevo y otra aceituna la cortaremos en ocho
+                                        partes para hacer las patitas. <br>
+
+                                        Para montar los diablos cortamos triangulitos de pimiento que harán de orejas y
+                                        barba, y cuadraditos de aceituna que serán para los ojos, tal como se ve en las
+                                        imágenes. Guardamos en la nevera hasta el momento de servir.
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio item 2 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Dip cementerio</h2>
+                                <img class="img-fluid d-block mx-auto"
+                                    src="https://i.blogs.es/73c446/dip-cementerio-para-halloween/1366_2000.jpg"
+                                    alt="..." />
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Ingredientes:</strong>
+                                        Para 10 personas:<br>
+                                        Frijoles cocidos (en lata) 260 g<br>
+                                        Creme Fraiche o crema fresca 250 g<br>
+                                        Sazonador para quesadillas 30 g<br>
+                                        Salsa Tabasco<br>
+                                        Aguacate maduro 2<br>
+                                        Diente de ajo 1<br>
+                                        Mayonesa 30 g<br>
+                                        Salsa mexicana 315 g<br>
+                                        Lechuga iceberg<br>
+                                        Tortillas de trigo 2.
+                                    </li>
+                                    <br><br>
+                                    <li>
+                                        <strong>Descripción:</strong>
+                                        Este dip cementerio para Halloween se compone de cinco capas. Cada una formada
+                                        por un ingrediente o mezcla de varios, que cubre la superficie de un molde de
+                                        22x16cm. No requiere de cocinado alguno, solo hay que mezclar, extender y listo.
+                                        Estas son las capas: <br>
+
+                                        Frijoles cocidos. <br>
+                                        Crème fraische, sazonador para quesadillas y unas gotas de tabasco. <br>
+                                        Aguacate machacado, mayonesa y diente de ajo picado finamente. <br>
+                                        Salsa mexicana. <br>
+                                        Lechuga iceberg cortada finamente. <br>
+                                        Dibujamos las lápidas en una de las tortillas de trigo y el árbol en la otra.
+                                        Cortamos con unas tijeras bien afiladas y disponemos sobre una bandeja de horno.
+                                        Colocamos en la parte media alta del horno y encendemos el gratinador durante
+                                        2-3 minutos a 300ºC (cuidado que no se quemen). Decoramos las lápidas con
+                                        mensajes, usando un rotulador de tinta comestible, colocamos en el dip y listo
+                                        para servir.
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio item 3 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Quesadillas Calabaza</h2>
+                                <img class="img-fluid d-block mx-auto"
+                                    src="https://i.blogs.es/83419e/quesadillas/1366_2000.jpg"
+                                    alt="..." />
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Ingredientes:</strong>
+                                        Para 2 personas:<br>
+                                        Tortillas de harina 4<br>
+                                        Queso Cheddar rallado<br>
+                                        Aceite de oliva virgen extra para engrasar la sartén<br>
+                                        Guacamole casero para servir
+                                    </li>
+                                    <br><br>
+                                    <li>
+                                        <strong>Descripción:</strong>
+                                        Marcar con un cuchillo de punta afilada, sobre una tabla, los ojos, la nariz y
+                                        la boca, y cortar siguiendo la línea marcada con cuidado. Extraer los recortes
+                                        (se pueden aprovechar para hacer chips fritos o al horno) y repetir con otra
+                                        tortilla.<br>
+
+                                        Precalentar el horno a mínima temperatura. Cubrir con una capa generosa de queso
+                                        cheddar rallado sobre dos tortillas sin recortar, dejando un poco de espacio
+                                        libre en los bordes. Disponer las caras recortadas encima, presionando
+                                        suavemente.<br>
+
+                                        Quesadillas. Pasos<br>
+                                        Engrasar ligeramente una sartén o plancha antiadherente y cocinar las
+                                        quesadillas una a una, a fuego medio, presionando un poco con una espátula hasta
+                                        que el queso se derrita y forme una capa homogénea.<br>
+
+                                        Reservar la primera quesadilla en el horno caliente para que no se enfríe
+                                        mientras se hace la otra, o repetir el proceso con todas las unidades que se
+                                        quiera. Servir con guacamole.
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
+</html>
