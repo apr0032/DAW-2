@@ -8,8 +8,19 @@
 </head>
 <body>
     <div id="alumnoInfo" class="alumno-info">
-        <!-- Aquí se mostrará la información del alumno -->
+        <!-- información del alumno -->
     </div>
+    <form id="formCambiarNombreTutor">
+        <label for="nombreTutor">Nuevo nombre del tutor:</label>
+        <input type="text" id="nombreTutor" name="nombreTutor">
+        <button type="button" onclick="cambiarNombreTutor()">Cambiar nombre del tutor</button>
+    </form>
+
+    <form id="formCambiarHoras">
+        <label for="horasTotalesAsignaturas">Nuevo numero de horas:</label>
+        <input type="text" id="horasTotalesAsignaturas" name="horasTotalesAsignaturas">
+        <button type="button" onclick="cambiarHoras()">Cambiar horas</button>
+    </form>
 
     <script src="script.js"></script>
 </body>

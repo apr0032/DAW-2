@@ -1,18 +1,51 @@
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
+    padding: 0;
 }
 
-.alumno-info {
-    border: 2px solid #ddd;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-h2, h3 {
+h2 {
     color: #333;
 }
 
-p {
-    margin: 10px 0;
+/* Estilos del formulario */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 200px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos de la sección de información del alumno */
+#alumnoInfo {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
 }
