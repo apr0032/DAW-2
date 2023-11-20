@@ -80,9 +80,14 @@
         listaTareas.appendChild(nuevaTarea);
         tareaInput.value = '';
 
-        // Agregar función para eliminar tarea al hacer clic
-        nuevaTarea.addEventListener('click', function() {
-          this.remove();
+        // Agregar botón para eliminar tarea
+        const botonEliminar = document.createElement('button');
+        botonEliminar.textContent = 'Eliminar';
+        nuevaTarea.appendChild(botonEliminar);
+
+        // Función para eliminar tarea al hacer clic en el botón
+        botonEliminar.addEventListener('click', function() {
+          nuevaTarea.remove();
         });
       }
     }
@@ -135,32 +140,8 @@
         alert('Las contraseñas no coinciden');
         return;
       }
-
-      // Aquí se realizaría la lógica de enviar los datos a una API ficticia
-      // Simulación de registro exitoso
+      // Simular registro
       alert('¡Registro exitoso!');
-      // Aquí podrías hacer una llamada a una API utilizando fetch o alguna librería de manejo de peticiones HTTP
-      // fetch('URL_API', {
-      //   method: 'POST',
-      //   body: JSON.stringify({ nombreUsuario, email, password }),
-      //   headers: {
-      //     'Content-Type': 'application/json'
-      //   }
-      // })
-      // .then(response => {
-      //   if (response.ok) {
-      //     return response.json();
-      //   }
-      //   throw new Error('Network response was not ok.');
-      // })
-      // .then(data => {
-      //   // Manejar la respuesta de la API
-      //   console.log(data);
-      // })
-      // .catch(error => {
-      //   // Manejar errores de red u otros errores
-      //   console.error('There has been a problem with your fetch operation:', error);
-      // });
     });
   </script>
 </body>
