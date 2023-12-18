@@ -1,7 +1,0 @@
-Sesiones: Almacenan datos sensibles en el servidor durante la sesión del usuario (inicia y termina con el inicio y cierre de sesión). 
-Son seguras y adecuadas para información confidencial como datos de inicio de sesión.
-
-Cookies: Guardan información en el navegador del usuario. Pueden ser de sesión (se borran al cerrar el navegador) o persistentes (se mantienen por más tiempo). 
-Se usan para recordar preferencias, personalizar la experiencia del usuario y rastrear cierta información como carritos de compras o historial de navegación.
-
-Las sesiones se suelen usar para datos sensibles, mientras que las cookies se emplean para personalizar la experiencia del usuario.
