@@ -1,0 +1,36 @@
+.crud {
+  background-color: rgb(134, 134, 134);
+  border-radius: 10px;
+  width: 75%;
+  height: 75%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  box-shadow: 20px 20px 40px black;
+  transition: all 0.4s;
+}
+svg {
+  color: aliceblue;
+  transition: all 0.4s;
+}
+
+svg:hover {
+  color: rgb(199, 5, 5);
+}
+
+.divv {
+  width: 100%;
+  height: 50vh;
+  overflow: auto;
+}
+
+.inputs{
+    border-radius: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .divv {
+    width: 100%;
+    height: 25vh;
+    overflow: auto;
+  }
+}

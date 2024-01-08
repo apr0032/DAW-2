@@ -1,0 +1,78 @@
+
+.contenedor{
+    height: 50vh;
+    background-color: rgba(99, 99, 99, 0.432);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-shadow: 20px 20px 40px  black;
+    transition: all .4s;
+
+
+}body{
+    background: fixed url(../img/blue-sky-half-moon-crescent-moon-clouds-star-trails-5k-3840x2160-8404.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.contenedor:hover{
+    background-color: rgba(0, 0, 0, 0.432);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: -10px -10px 40px  black;
+}
+
+.code{
+    color:white;
+    transition: all .6s;
+    cursor: pointer;
+}
+nav{
+width: 40%;
+}
+
+.code:hover{
+    color: rgb(255, 0, 128);
+}
+
+#login{
+    display: flex;
+}
+
+#reg{
+    display:none;
+}
+
+
+h2{
+    font-weight: bold;
+}
+
+.contenedorcabiña{
+    display: none;
+}
+
+#ladoazul {
+    background: linear-gradient(blueviolet, pink) ;
+    position: fixed !important;
+    z-index: 100;
+    width: 35%;
+    height: 50%;
+    left: 15%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .6s;
+}
+.textooo{
+    font-size: 100%;
+    color: rgb(255, 255, 255);
+}
+@media screen and (max-width:1260px) { 
+    .contenedorlogin important{
+        width: 70% ;
+    }
+}
+
