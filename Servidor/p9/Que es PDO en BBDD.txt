@@ -1,0 +1,17 @@
+PDO (PHP Data Objects) en PHP es una interfaz que permite interactuar con bases de datos de manera segura y eficiente. 
+Esta simplifica la interacción con bases de datos, mejora la seguridad y la portabilidad del código, y ofrece
+una capa de abstracción que facilita el trabajo con diferentes sistemas de bases de datos en entornos PHP.
+
+
+Sus ventajas clave son:
+
+-Portabilidad: Permite escribir código que funciona con diferentes bases de datos sin cambios significativos, facilitando la migración entre sistemas.
+
+-Seguridad: Ayuda a prevenir ataques de inyección SQL mediante el uso de consultas preparadas y parámetros vinculados.
+
+-Soporte Multiplataforma: Es compatible con varios sistemas de gestión de bases de datos, como MySQL, PostgreSQL, SQLite, SQL Server, Oracle, entre otros.
+
+-Transacciones: Permite agrupar operaciones de base de datos en unidades atómicas, asegurando que todas las operaciones se completen o reviertan si hay algún error.
+
+-Manejo de Errores: Proporciona un manejo avanzado de errores y permite capturar excepciones para un mejor control y depuración.
+

@@ -11,6 +11,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
 <head>
     <title>Lista de Usuarios</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <h2>Lista de Usuarios</h2>
@@ -18,6 +19,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <tr>
             <th>ID</th>
             <th>Nombre</th>
+            <th>Password</th>
             <th>Email</th>
             <th>Edad</th>
             <th>Acciones</th>
@@ -26,6 +28,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <tr>
                 <td><?php echo $usuario['id']; ?></td>
                 <td><?php echo $usuario['nombre']; ?></td>
+                <td><?php echo $usuario['password']; ?></td>
                 <td><?php echo $usuario['email']; ?></td>
                 <td><?php echo $usuario['edad']; ?></td>
                 <td>
@@ -35,5 +38,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </tr>
         <?php endforeach; ?>
     </table>
+    <br>
+    <a href="inicio.php">Volver al inicio</a>
 </body>
 </html>

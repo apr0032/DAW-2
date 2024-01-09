@@ -7,13 +7,15 @@ $id = isset($_GET['id']) ? $_GET['id'] : null;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_POST['id'];
     $nombre = $_POST['nombre'];
+    $password = $_POST['password'];
     $email = $_POST['email'];
     $edad = $_POST['edad'];
 
-    $sql = "UPDATE usuarios SET nombre = :nombre, email = :email, edad = :edad WHERE id = :id";
+    $sql = "UPDATE usuarios SET nombre = :nombre, password = :password, email = :email, edad = :edad WHERE id = :id";
     $stmt = $conn->prepare($sql);
 
     $stmt->bindParam(':nombre', $nombre);
+    $stmt->bindParam(':password', $password);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':edad', $edad);
     $stmt->bindParam(':id', $id);
@@ -37,6 +39,7 @@ if ($id) {
 <html>
 <head>
     <title>Modificar Usuario</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
@@ -45,16 +48,20 @@ if ($id) {
 <form method="post">
     <input type="hidden" name="id" value="<?php echo $usuario['id']; ?>">
     <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" value="<?php echo $usuario['nombre']; ?>"><br><br>
+    <input type="text" id="nombre" name="nombre"><br><br>
+
+    <label for="password">password:</label>
+    <input type="password" id="password" name="password"><br><br>
 
     <label for="email">Email:</label>
-    <input type="email" id="email" name="email" value="<?php echo $usuario['email']; ?>"><br><br>
+    <input type="email" id="email" name="email"><br><br>
 
     <label for="edad">Edad:</label>
-    <input type="number" id="edad" name="edad" value="<?php echo $usuario['edad']; ?>"><br><br>
+    <input type="number" id="edad" name="edad"><br><br>
 
     <input type="submit" value="Guardar Cambios">
 </form>
-
+<br>
+<a href="inicio.php">Volver al inicio</a>
 </body>
 </html>
