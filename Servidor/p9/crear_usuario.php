@@ -16,8 +16,8 @@
   <label for="nombre">Nombre:</label>
   <input type="text" id="nombre" name="nombre"><br><br>
 
-  <label for="password">password:</label>
-  <input type="password" id="password" name="password"><br><br>
+  <label for="direccion">direccion:</label>
+  <input type="text" id="direccion" name="direccion"><br><br>
 
   <label for="email">Email:</label>
   <input type="email" id="email" name="email"><br><br>
@@ -38,16 +38,16 @@ include_once 'conexion.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_POST['id'];  
     $nombre = $_POST['nombre'];
-    $password = $_POST['password'];
+    $direccion = $_POST['direccion'];
     $email = $_POST['email'];
     $edad = $_POST['edad'];
 
-    $sql = "INSERT INTO usuarios (id, nombre, password, email, edad) VALUES (:id, :nombre, :password, :email, :edad)";
+    $sql = "INSERT INTO usuarios (id, nombre, direccion, email, edad) VALUES (:id, :nombre, :direccion, :email, :edad)";
     $stmt = $conn->prepare($sql);
 
     $stmt->bindParam(':id', $id);
     $stmt->bindParam(':nombre', $nombre);
-    $stmt->bindParam(':password', $password);
+    $stmt->bindParam(':direccion', $direccion);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':edad', $edad);
 

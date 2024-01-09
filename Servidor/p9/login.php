@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     // Realizar la consulta a la base de datos para verificar las credenciales
-    $sql = "SELECT * FROM usuarios WHERE nombre = :username AND password = :password";
+    $sql = "SELECT * FROM administradores WHERE nombre = :username AND password = :password";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':password', $password);

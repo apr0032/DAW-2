@@ -19,7 +19,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <tr>
             <th>ID</th>
             <th>Nombre</th>
-            <th>Password</th>
+            <th>direccion</th>
             <th>Email</th>
             <th>Edad</th>
             <th>Acciones</th>
@@ -28,7 +28,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <tr>
                 <td><?php echo $usuario['id']; ?></td>
                 <td><?php echo $usuario['nombre']; ?></td>
-                <td><?php echo $usuario['password']; ?></td>
+                <td><?php echo $usuario['direccion']; ?></td>
                 <td><?php echo $usuario['email']; ?></td>
                 <td><?php echo $usuario['edad']; ?></td>
                 <td>

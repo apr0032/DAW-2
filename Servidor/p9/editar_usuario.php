@@ -7,15 +7,15 @@ $id = isset($_GET['id']) ? $_GET['id'] : null;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_POST['id'];
     $nombre = $_POST['nombre'];
-    $password = $_POST['password'];
+    $direccion = $_POST['direccion'];
     $email = $_POST['email'];
     $edad = $_POST['edad'];
 
-    $sql = "UPDATE usuarios SET nombre = :nombre, password = :password, email = :email, edad = :edad WHERE id = :id";
+    $sql = "UPDATE usuarios SET nombre = :nombre, direccion = :direccion, email = :email, edad = :edad WHERE id = :id";
     $stmt = $conn->prepare($sql);
 
     $stmt->bindParam(':nombre', $nombre);
-    $stmt->bindParam(':password', $password);
+    $stmt->bindParam(':direccion', $direccion);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':edad', $edad);
     $stmt->bindParam(':id', $id);
@@ -50,8 +50,8 @@ if ($id) {
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre"><br><br>
 
-    <label for="password">password:</label>
-    <input type="password" id="password" name="password"><br><br>
+    <label for="direccion">direccion:</label>
+    <input type="text" id="direccion" name="direccion"><br><br>
 
     <label for="email">Email:</label>
     <input type="email" id="email" name="email"><br><br>
