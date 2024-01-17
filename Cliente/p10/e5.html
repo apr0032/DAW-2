@@ -1,0 +1,19 @@
+interface Ave {
+    void volar();
+  }
+  
+  class AveVoladora implements Ave {
+    @Override
+    public void volar() {
+      // lógica para volar
+    }
+  }
+  
+  class Pinguino implements Ave {
+    @Override
+    public void volar() {
+      // Un pingüino no puede volar, pero implementamos el método por coherencia
+      System.out.println("Un pingüino no puede volar.");
+    }
+  }
+  

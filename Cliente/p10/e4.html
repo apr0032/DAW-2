@@ -1,0 +1,24 @@
+interface Descuento {
+    double aplicarDescuento(double precio);
+  }
+  
+  class DescuentoDirecto implements Descuento {
+    @Override
+    double aplicarDescuento(double precio) {
+      // lógica para aplicar descuento directo
+    }
+  }
+  
+  class DescuentoPorcentaje implements Descuento {
+    private double porcentaje;
+  
+    DescuentoPorcentaje(double porcentaje) {
+      this.porcentaje = porcentaje;
+    }
+  
+    @Override
+    double aplicarDescuento(double precio) {
+      // lógica para aplicar descuento por porcentaje
+    }
+  }
+  

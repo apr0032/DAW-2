@@ -1,0 +1,23 @@
+class CalculadoraSalario {
+    double calcularSalario() {
+      // lógica para calcular salario
+    }
+  }
+  
+  class GeneradorReporte {
+    void generarReporte() {
+      // lógica para generar reporte
+    }
+  }
+  
+  class Empleado {
+    CalculadoraSalario calculadoraSalario;
+    GeneradorReporte generadorReporte;
+  
+    // Constructor que inyecta instancias de las nuevas clases
+    Empleado(CalculadoraSalario calculadoraSalario, GeneradorReporte generadorReporte) {
+      this.calculadoraSalario = calculadoraSalario;
+      this.generadorReporte = generadorReporte;
+    }
+  }
+  

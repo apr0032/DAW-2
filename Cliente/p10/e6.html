@@ -1,0 +1,43 @@
+interface Interruptor {
+    boolean estaEncendida();
+    void encender();
+    void apagar();
+  }
+  
+  class Switch {
+    Interruptor interruptor;
+  
+    Switch(Interruptor interruptor) {
+      this.interruptor = interruptor;
+    }
+  
+    void presionarBoton() {
+      if (interruptor.estaEncendida()) {
+        interruptor.apagar();
+      } else {
+        interruptor.encender();
+      }
+    }
+  }
+  
+  class Bombilla implements Interruptor {
+    private boolean encendida;
+  
+    @Override
+    public boolean estaEncendida() {
+      return encendida;
+    }
+  
+    @Override
+    public void encender() {
+      encendida = true;
+      // lógica para encender la bombilla
+    }
+  
+    @Override
+    public void apagar() {
+      encendida = false;
+      // lógica para apagar la bombilla
+    }
+  }
+  
