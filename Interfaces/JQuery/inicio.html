@@ -105,21 +105,19 @@
     });
 
     changeFont.click(function () {
-      var font = prompt("Introduce la fuente (ej. Arial, serif, Courier...):");
-      if (font) {
-        article.css("font-family", font);
-      }
+      article.css("font-family", infoInput.val());
+      infoInput.val("");
     });
 
     changeBgColor.click(function () {
-      var bgColor = prompt("Introduce el color de fondo (ej. red, blue...):");
+      var bgColor = prompt("Introduce el color de fondo (ej. #ffffff):");
       if (bgColor) {
         article.css("background-color", bgColor);
       }
     });
 
     changeTextColor.click(function () {
-      var textColor = prompt("Introduce el color del texto (ej. red, blue...):");
+      var textColor = prompt("Introduce el color del texto (ej. #000000):");
       if (textColor) {
         article.css("color", textColor);
       }
