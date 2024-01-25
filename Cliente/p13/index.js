@@ -11,6 +11,9 @@ var Jugador = /** @class */ (function () {
     Jugador.prototype.getNombre = function () {
         return this.nombre;
     };
+    Jugador.prototype.setNombre = function (nombre) {
+        this.nombre = nombre;
+    };
     Jugador.prototype.getPuntosSalud = function () {
         return this.puntos_salud;
     };
@@ -30,13 +33,13 @@ var Jugador = /** @class */ (function () {
         this.dinero = dinero;
     };
     Jugador.prototype.imprimirEstadisticas = function () {
-        console.log("Nombre: ".concat(this.nombre));
-        console.log("Puntos de Salud: ".concat(this.puntos_salud));
-        console.log("Puntos de Ataque: ".concat(this.puntos_ataque));
-        console.log("Dinero: ".concat(this.dinero, " oro"));
+        console.log("Nombre: ".concat(this.getNombre()));
+        console.log("Puntos de Salud: ".concat(this.getPuntosSalud()));
+        console.log("Puntos de Ataque: ".concat(this.getPuntosAtaque()));
+        console.log("Dinero: ".concat(this.getDinero(), " oro"));
     };
     Jugador.prototype.calcularFuerzaInicial = function () {
-        this.puntos_ataque = Math.floor(Math.random() * 10) + 1;
+        this.setPuntosAtaque(Math.floor(Math.random() * 6) + 1);
     };
     return Jugador;
 }());
@@ -49,6 +52,9 @@ var Enemigo = /** @class */ (function () {
     Enemigo.prototype.getNombre = function () {
         return this.nombre;
     };
+    Enemigo.prototype.setNombre = function (nombre) {
+        this.nombre = nombre;
+    };
     Enemigo.prototype.getPuntosAtaque = function () {
         return this.puntos_ataque;
     };
@@ -56,7 +62,7 @@ var Enemigo = /** @class */ (function () {
         this.puntos_ataque = puntosAtaque;
     };
     Enemigo.prototype.calcularFuerzaEnemigo = function () {
-        this.puntos_ataque = Math.floor(Math.random() * 10) + 1;
+        this.setPuntosAtaque(Math.floor(Math.random() * 8) + 1);
     };
     Enemigo.prototype.soltarDinero = function () {
         this.oro_soltado = Math.floor(Math.random() * 5) + 1;
@@ -117,12 +123,70 @@ var Main = /** @class */ (function () {
             console.log("Has perdido el combate. Pierdes ".concat(diferenciaAtaque, " puntos de salud."));
             if (this.jugador.getPuntosSalud() <= 0) {
                 console.log("Tu vida ha llegado a 0. Has perdido el juego.");
-                return;
+                process.exit();
             }
         }
     };
     Main.prototype.comprarItems = function () {
-        // Implementa la lógica para comprar ítems aquí
+        console.log("\nPanel de opciones de compra:");
+        console.log("1. Cuchillo - Ataque +1 - Precio: 4 oro");
+        console.log("2. Glock - Ataque +2 - Precio: 5 oro");
+        console.log("3. Smith & Wesson - Ataque +3 - Precio: 7 oro");
+        console.log("4. AK-47 - Ataque +4 - Precio: 10 oro");
+        console.log("5. Lanzacohete antiaéreo - Ataque +10 - Precio: 20 oro");
+        console.log("6. Botiquin - Recuperación de salud +5 - Precio: 5 oro");
+        console.log("7. Tirita - Recuperación de salud +2 - Precio: 3 oro");
+        console.log("8. Volver al menú principal");
+        var opcionCompra = parseInt(readlineSync.question("Elige una opcion: ") || "0");
+        switch (opcionCompra) {
+            case 1:
+                this.comprarArma("Cuchillo", 1, 4);
+                break;
+            case 2:
+                this.comprarArma("Glock", 2, 5);
+                break;
+            case 3:
+                this.comprarArma("Smith & Wesson", 3, 7);
+                break;
+            case 4:
+                this.comprarArma("AK-47", 4, 10);
+                break;
+            case 5:
+                this.comprarArma("Lanzacohete antiaéreo", 10, 20);
+                break;
+            case 6:
+                this.comprarItem("Botiquin", 5, 5);
+                break;
+            case 7:
+                this.comprarItem("Tirita", 2, 3);
+                break;
+            case 8:
+                console.log("Volviendo al menú principal.");
+                break;
+            default:
+                console.log("Opción inválida. Inténtalo de nuevo.");
+                break;
+        }
+    };
+    Main.prototype.comprarArma = function (nombreArma, puntosAtaqueExtra, precio) {
+        if (this.jugador.getDinero() >= precio) {
+            this.jugador.setDinero(this.jugador.getDinero() - precio);
+            this.jugador.setPuntosAtaque(this.jugador.getPuntosAtaque() + puntosAtaqueExtra);
+            console.log("Has comprado ".concat(nombreArma, ". Tu ataque ha aumentado en ").concat(puntosAtaqueExtra, " puntos."));
+        }
+        else {
+            console.log("No tienes suficiente oro para comprar esta arma.");
+        }
+    };
+    Main.prototype.comprarItem = function (nombreItem, puntosRecuperacion, precio) {
+        if (this.jugador.getDinero() >= precio) {
+            this.jugador.setDinero(this.jugador.getDinero() - precio);
+            this.jugador.setPuntosSalud(this.jugador.getPuntosSalud() + puntosRecuperacion);
+            console.log("Has comprado ".concat(nombreItem, ". Tu salud se ha recuperado en ").concat(puntosRecuperacion, " puntos."));
+        }
+        else {
+            console.log("No tienes suficiente oro para comprar este ítem.");
+        }
     };
     Main.prototype.consultarEstadisticas = function () {
         this.jugador.imprimirEstadisticas();
