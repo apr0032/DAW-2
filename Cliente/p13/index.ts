@@ -46,10 +46,10 @@ class Jugador {
   }
 
   imprimirEstadisticas(): void {
-    console.log(`Nombre: ${this.getNombre()}`);
-    console.log(`Puntos de Salud: ${this.getPuntosSalud()}`);
-    console.log(`Puntos de Ataque: ${this.getPuntosAtaque()}`);
-    console.log(`Dinero: ${this.getDinero()} oro`);
+    console.log(`\nNombre: ${this.getNombre()}🥵`);
+    console.log(`Puntos de Salud: ${this.getPuntosSalud()}💉`);
+    console.log(`Puntos de Ataque: ${this.getPuntosAtaque()}🏹`);
+    console.log(`Dinero: ${this.getDinero()} oro💰`);
   }
 
   calcularFuerzaInicial(): void {
@@ -95,11 +95,11 @@ class Enemigo {
 }
 
 class Main {
-  private enemigos: string[] = ["Profesor1", "Compañero1", "Profesor2", "Compañero2"];
+  private enemigos: string[] = ["Javi🥶", "Isaac💀", "Evelyn💯", "Maria(Teacher)🥵😱🥵🥵🥵🥵🥵🥶🥵🥵🥵🥵🥵👺🥵😻🐱‍🐉🥵🥵🥵🥵🥵🥵"];
   private jugador: Jugador;
 
   constructor() {
-    console.log("Bienvenido al juego 'El reinado de Medac'");
+    console.log("Bienvenido al juego 'El reinado de Medac(Flipa)'");
     
     const nombreJugador: string = readlineSync.question("Introduce tu nombre: ") || "Jugador";
     this.jugador = new Jugador(nombreJugador);
@@ -130,10 +130,10 @@ class Main {
           this.consultarEstadisticas();
           break;
         case 4:
-          console.log("Gracias por jugar. ¡Hasta luego!");
+          console.log("Ya te ha matao el payo este eh jajajj. ¡enga!");
           break;
         default:
-          console.log("Opción inválida. Inténtalo de nuevo.");
+          console.log("Tócale bien a las teclas compañero. Echale polla!.");
       }
     } while (opcion !== 4);
   }
@@ -143,20 +143,21 @@ class Main {
     const enemigo: Enemigo = new Enemigo(nombreEnemigo);
     enemigo.calcularFuerzaEnemigo();
 
-    console.log(`Te enfrentas a ${nombreEnemigo}`);
+    console.log(`\nLuchas contra ${nombreEnemigo}`);
     console.log(`Fuerza del enemigo: ${enemigo.getPuntosAtaque()}`);
+    console.log(`Tu fuerza: ${this.jugador.getPuntosAtaque()}`);
 
     if (this.jugador.getPuntosAtaque() >= enemigo.getPuntosAtaque()) {
       const oroGanado: number = enemigo.soltarDinero();
       this.jugador.setDinero(this.jugador.getDinero() + oroGanado);
-      console.log(`Has ganado el combate y has recibido ${oroGanado} oro.`);
+      console.log(`Has ganado vamoo, has recibido ${oroGanado} oro🥇.`);
     } else {
       const diferenciaAtaque: number = enemigo.getPuntosAtaque() - this.jugador.getPuntosAtaque();
       this.jugador.setPuntosSalud(this.jugador.getPuntosSalud() - diferenciaAtaque);
-      console.log(`Has perdido el combate. Pierdes ${diferenciaAtaque} puntos de salud.`);
+      console.log(`Has perdido💀. Pierdes ${diferenciaAtaque} puntos de salud💚.`);
 
       if (this.jugador.getPuntosSalud() <= 0) {
-        console.log("Tu vida ha llegado a 0. Has perdido el juego.");
+        console.log("\nTu vida ha llegado a 0. Has perdido tioo💀💀💯🚶‍♂️😅.");
         process.exit();
       }
     }
@@ -164,14 +165,14 @@ class Main {
 
   comprarItems(): void {
     console.log("\nPanel de opciones de compra:");
-    console.log("1. Cuchillo - Ataque +1 - Precio: 4 oro");
-    console.log("2. Glock - Ataque +2 - Precio: 5 oro");
-    console.log("3. Smith & Wesson - Ataque +3 - Precio: 7 oro");
-    console.log("4. AK-47 - Ataque +4 - Precio: 10 oro");
-    console.log("5. Lanzacohete antiaéreo - Ataque +10 - Precio: 20 oro");
-    console.log("6. Botiquin - Recuperación de salud +5 - Precio: 5 oro");
-    console.log("7. Tirita - Recuperación de salud +2 - Precio: 3 oro");
-    console.log("8. Volver al menú principal");
+    console.log("🔪1. Cuchillo - Ataque +1 - Precio: 4 oro");
+    console.log("🔫2. Glock - Ataque +2 - Precio: 5 oro");
+    console.log("🔫3. Smith & Wesson - Ataque +3 - Precio: 7 oro");
+    console.log("🔫4. AK-47 - Ataque +4 - Precio: 10 oro");
+    console.log("🔫5. Lanzacohete antiaéreo - Ataque +10 - Precio: 20 oro");
+    console.log("🩸6. Botiquin - Recuperación de salud +5 - Precio: 5 oro");
+    console.log("🩸7. Tirita - Recuperación de salud +2 - Precio: 3 oro");
+    console.log("❌8. Volver al menú principal");
 
     const opcionCompra: number = parseInt(readlineSync.question("Elige una opcion: ") || "0");
 

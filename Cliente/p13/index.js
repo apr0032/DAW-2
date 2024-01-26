@@ -33,10 +33,10 @@ var Jugador = /** @class */ (function () {
         this.dinero = dinero;
     };
     Jugador.prototype.imprimirEstadisticas = function () {
-        console.log("Nombre: ".concat(this.getNombre()));
-        console.log("Puntos de Salud: ".concat(this.getPuntosSalud()));
-        console.log("Puntos de Ataque: ".concat(this.getPuntosAtaque()));
-        console.log("Dinero: ".concat(this.getDinero(), " oro"));
+        console.log("\nNombre: ".concat(this.getNombre(), "\uD83E\uDD75"));
+        console.log("Puntos de Salud: ".concat(this.getPuntosSalud(), "\uD83D\uDC89"));
+        console.log("Puntos de Ataque: ".concat(this.getPuntosAtaque(), "\uD83C\uDFF9"));
+        console.log("Dinero: ".concat(this.getDinero(), " oro\uD83D\uDCB0"));
     };
     Jugador.prototype.calcularFuerzaInicial = function () {
         this.setPuntosAtaque(Math.floor(Math.random() * 6) + 1);
@@ -72,8 +72,8 @@ var Enemigo = /** @class */ (function () {
 }());
 var Main = /** @class */ (function () {
     function Main() {
-        this.enemigos = ["Profesor1", "Compañero1", "Profesor2", "Compañero2"];
-        console.log("Bienvenido al juego 'El reinado de Medac'");
+        this.enemigos = ["Javi🥶", "Isaac💀", "Evelyn💯", "Maria(Teacher)🥵😱🥵🥵🥵🥵🥵🥶🥵🥵🥵🥵🥵👺🥵😻🐱‍🐉🥵🥵🥵🥵🥵🥵"];
+        console.log("Bienvenido al juego 'El reinado de Medac(Flipa)'");
         var nombreJugador = readlineSync.question("Introduce tu nombre: ") || "Jugador";
         this.jugador = new Jugador(nombreJugador);
         this.jugador.calcularFuerzaInicial();
@@ -99,10 +99,10 @@ var Main = /** @class */ (function () {
                     this.consultarEstadisticas();
                     break;
                 case 4:
-                    console.log("Gracias por jugar. ¡Hasta luego!");
+                    console.log("Ya te ha matao el payo este eh jajajj. ¡enga!");
                     break;
                 default:
-                    console.log("Opción inválida. Inténtalo de nuevo.");
+                    console.log("Tócale bien a las teclas compañero. Echale polla!.");
             }
         } while (opcion !== 4);
     };
@@ -110,33 +110,34 @@ var Main = /** @class */ (function () {
         var nombreEnemigo = this.enemigos[Math.floor(Math.random() * this.enemigos.length)];
         var enemigo = new Enemigo(nombreEnemigo);
         enemigo.calcularFuerzaEnemigo();
-        console.log("Te enfrentas a ".concat(nombreEnemigo));
+        console.log("\nLuchas contra ".concat(nombreEnemigo));
         console.log("Fuerza del enemigo: ".concat(enemigo.getPuntosAtaque()));
+        console.log("Tu fuerza: ".concat(this.jugador.getPuntosAtaque()));
         if (this.jugador.getPuntosAtaque() >= enemigo.getPuntosAtaque()) {
             var oroGanado = enemigo.soltarDinero();
             this.jugador.setDinero(this.jugador.getDinero() + oroGanado);
-            console.log("Has ganado el combate y has recibido ".concat(oroGanado, " oro."));
+            console.log("Has ganado vamoo, has recibido ".concat(oroGanado, " oro\uD83E\uDD47."));
         }
         else {
             var diferenciaAtaque = enemigo.getPuntosAtaque() - this.jugador.getPuntosAtaque();
             this.jugador.setPuntosSalud(this.jugador.getPuntosSalud() - diferenciaAtaque);
-            console.log("Has perdido el combate. Pierdes ".concat(diferenciaAtaque, " puntos de salud."));
+            console.log("Has perdido\uD83D\uDC80. Pierdes ".concat(diferenciaAtaque, " puntos de salud\uD83D\uDC9A."));
             if (this.jugador.getPuntosSalud() <= 0) {
-                console.log("Tu vida ha llegado a 0. Has perdido el juego.");
+                console.log("\nTu vida ha llegado a 0. Has perdido tioo💀💀💯🚶‍♂️😅.");
                 process.exit();
             }
         }
     };
     Main.prototype.comprarItems = function () {
         console.log("\nPanel de opciones de compra:");
-        console.log("1. Cuchillo - Ataque +1 - Precio: 4 oro");
-        console.log("2. Glock - Ataque +2 - Precio: 5 oro");
-        console.log("3. Smith & Wesson - Ataque +3 - Precio: 7 oro");
-        console.log("4. AK-47 - Ataque +4 - Precio: 10 oro");
-        console.log("5. Lanzacohete antiaéreo - Ataque +10 - Precio: 20 oro");
-        console.log("6. Botiquin - Recuperación de salud +5 - Precio: 5 oro");
-        console.log("7. Tirita - Recuperación de salud +2 - Precio: 3 oro");
-        console.log("8. Volver al menú principal");
+        console.log("🔪1. Cuchillo - Ataque +1 - Precio: 4 oro");
+        console.log("🔫2. Glock - Ataque +2 - Precio: 5 oro");
+        console.log("🔫3. Smith & Wesson - Ataque +3 - Precio: 7 oro");
+        console.log("🔫4. AK-47 - Ataque +4 - Precio: 10 oro");
+        console.log("🔫5. Lanzacohete antiaéreo - Ataque +10 - Precio: 20 oro");
+        console.log("🩸6. Botiquin - Recuperación de salud +5 - Precio: 5 oro");
+        console.log("🩸7. Tirita - Recuperación de salud +2 - Precio: 3 oro");
+        console.log("❌8. Volver al menú principal");
         var opcionCompra = parseInt(readlineSync.question("Elige una opcion: ") || "0");
         switch (opcionCompra) {
             case 1:
