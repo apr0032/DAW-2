@@ -39,7 +39,7 @@ var Jugador = /** @class */ (function () {
         console.log("Dinero: ".concat(this.getDinero(), " oro\uD83D\uDCB0"));
     };
     Jugador.prototype.calcularFuerzaInicial = function () {
-        this.setPuntosAtaque(Math.floor(Math.random() * 6) + 1);
+        this.setPuntosAtaque(Math.floor(Math.random() * 3) + 2);
     };
     return Jugador;
 }());
@@ -62,18 +62,18 @@ var Enemigo = /** @class */ (function () {
         this.puntos_ataque = puntosAtaque;
     };
     Enemigo.prototype.calcularFuerzaEnemigo = function () {
-        this.setPuntosAtaque(Math.floor(Math.random() * 8) + 1);
+        this.setPuntosAtaque(Math.floor(Math.random() * 7) + 2);
     };
     Enemigo.prototype.soltarDinero = function () {
-        this.oro_soltado = Math.floor(Math.random() * 5) + 1;
+        this.oro_soltado = Math.floor(Math.random() * 3) + 1;
         return this.oro_soltado;
     };
     return Enemigo;
 }());
 var Main = /** @class */ (function () {
     function Main() {
-        this.enemigos = ["Javi🥶", "Isaac💀", "Evelyn💯", "Maria(Teacher)🥵😱🥵🥵🥵🥵🥵🥶🥵🥵🥵🥵🥵👺🥵😻🐱‍🐉🥵🥵🥵🥵🥵🥵"];
-        console.log("Bienvenido al juego 'El reinado de Medac(Flipa)'");
+        this.enemigos = ["Javi🥶", "Isaac💀", "Evelyn💯", "Maria(Teacher)🤯"];
+        console.log("Bienvenido al juego 'El reinado de Medac'");
         var nombreJugador = readlineSync.question("Introduce tu nombre: ") || "Jugador";
         this.jugador = new Jugador(nombreJugador);
         this.jugador.calcularFuerzaInicial();
@@ -99,10 +99,10 @@ var Main = /** @class */ (function () {
                     this.consultarEstadisticas();
                     break;
                 case 4:
-                    console.log("Ya te ha matao el payo este eh jajajj. ¡enga!");
+                    console.log("Ya te ha matao el payo este eh jajajj");
                     break;
                 default:
-                    console.log("Tócale bien a las teclas compañero. Echale polla!.");
+                    console.log("Tócale bien a las teclas compañero");
             }
         } while (opcion !== 4);
     };
@@ -123,7 +123,7 @@ var Main = /** @class */ (function () {
             this.jugador.setPuntosSalud(this.jugador.getPuntosSalud() - diferenciaAtaque);
             console.log("Has perdido\uD83D\uDC80. Pierdes ".concat(diferenciaAtaque, " puntos de salud\uD83D\uDC9A."));
             if (this.jugador.getPuntosSalud() <= 0) {
-                console.log("\nTu vida ha llegado a 0. Has perdido tioo💀💀💯🚶‍♂️😅.");
+                console.log("\nTu vida ha llegado a 0. Has perdido 💀💀💯😅.");
                 process.exit();
             }
         }

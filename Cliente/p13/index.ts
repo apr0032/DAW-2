@@ -53,7 +53,7 @@ class Jugador {
   }
 
   calcularFuerzaInicial(): void {
-    this.setPuntosAtaque(Math.floor(Math.random() * 6) + 1);
+    this.setPuntosAtaque(Math.floor(Math.random() * 3) + 2);
   }
 }
 
@@ -85,21 +85,21 @@ class Enemigo {
   }
 
   calcularFuerzaEnemigo(): void {
-    this.setPuntosAtaque(Math.floor(Math.random() * 8) + 1);
+    this.setPuntosAtaque(Math.floor(Math.random() * 7) + 2);
   }
 
   soltarDinero(): number {
-    this.oro_soltado = Math.floor(Math.random() * 5) + 1;
+    this.oro_soltado = Math.floor(Math.random() * 3) + 1;
     return this.oro_soltado;
   }
 }
 
 class Main {
-  private enemigos: string[] = ["Javi🥶", "Isaac💀", "Evelyn💯", "Maria(Teacher)🥵😱🥵🥵🥵🥵🥵🥶🥵🥵🥵🥵🥵👺🥵😻🐱‍🐉🥵🥵🥵🥵🥵🥵"];
+  private enemigos: string[] = ["Javi🥶", "Isaac💀", "Evelyn💯", "Maria(Teacher)🤯"];
   private jugador: Jugador;
 
   constructor() {
-    console.log("Bienvenido al juego 'El reinado de Medac(Flipa)'");
+    console.log("Bienvenido al juego 'El reinado de Medac'");
     
     const nombreJugador: string = readlineSync.question("Introduce tu nombre: ") || "Jugador";
     this.jugador = new Jugador(nombreJugador);
@@ -130,10 +130,10 @@ class Main {
           this.consultarEstadisticas();
           break;
         case 4:
-          console.log("Ya te ha matao el payo este eh jajajj. ¡enga!");
+          console.log("Ya te ha matao el payo este eh jajajj");
           break;
         default:
-          console.log("Tócale bien a las teclas compañero. Echale polla!.");
+          console.log("Tócale bien a las teclas compañero");
       }
     } while (opcion !== 4);
   }
@@ -157,7 +157,7 @@ class Main {
       console.log(`Has perdido💀. Pierdes ${diferenciaAtaque} puntos de salud💚.`);
 
       if (this.jugador.getPuntosSalud() <= 0) {
-        console.log("\nTu vida ha llegado a 0. Has perdido tioo💀💀💯🚶‍♂️😅.");
+        console.log("\nTu vida ha llegado a 0. Has perdido 💀💀💯😅.");
         process.exit();
       }
     }
