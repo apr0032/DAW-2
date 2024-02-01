@@ -53,7 +53,7 @@ class Jugador {
   }
 
   calcularFuerzaInicial(): void {
-    this.setPuntosAtaque(Math.floor(Math.random() * 3) + 2);
+    this.setPuntosAtaque(Math.floor(Math.random() * 2) + 3);
   }
 }
 
@@ -105,6 +105,7 @@ class Main {
     this.jugador = new Jugador(nombreJugador);
     this.jugador.calcularFuerzaInicial();
 
+
     this.menuPrincipal();
   }
 
@@ -115,7 +116,8 @@ class Main {
       console.log("1. Luchar contra el enemigo");
       console.log("2. Comprar ítems");
       console.log("3. Consultar tus estadísticas");
-      console.log("4. Salir del juego");
+      console.log("4. Cambiar fuerza");
+      console.log("5. Salir del juego");
 
       opcion = parseInt(readlineSync.question("Elige una opción: ") || "0");
 
@@ -130,12 +132,16 @@ class Main {
           this.consultarEstadisticas();
           break;
         case 4:
+          this.jugador.calcularFuerzaInicial();
+          this.jugador.setDinero(this.jugador.getDinero() - 1);
+          break;
+        case 5:
           console.log("Ya te ha matao el payo este eh jajajj");
           break;
         default:
           console.log("Tócale bien a las teclas compañero");
       }
-    } while (opcion !== 4);
+    } while (opcion !== 5);
   }
 
   lucharContraEnemigo(): void {

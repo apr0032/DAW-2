@@ -39,7 +39,7 @@ var Jugador = /** @class */ (function () {
         console.log("Dinero: ".concat(this.getDinero(), " oro\uD83D\uDCB0"));
     };
     Jugador.prototype.calcularFuerzaInicial = function () {
-        this.setPuntosAtaque(Math.floor(Math.random() * 3) + 2);
+        this.setPuntosAtaque(Math.floor(Math.random() * 2) + 3);
     };
     return Jugador;
 }());
@@ -86,7 +86,8 @@ var Main = /** @class */ (function () {
             console.log("1. Luchar contra el enemigo");
             console.log("2. Comprar ítems");
             console.log("3. Consultar tus estadísticas");
-            console.log("4. Salir del juego");
+            console.log("4. Cambiar fuerza");
+            console.log("5. Salir del juego");
             opcion = parseInt(readlineSync.question("Elige una opción: ") || "0");
             switch (opcion) {
                 case 1:
@@ -99,12 +100,16 @@ var Main = /** @class */ (function () {
                     this.consultarEstadisticas();
                     break;
                 case 4:
+                    this.jugador.calcularFuerzaInicial();
+                    this.jugador.setDinero(this.jugador.getDinero() - 1);
+                    break;
+                case 5:
                     console.log("Ya te ha matao el payo este eh jajajj");
                     break;
                 default:
                     console.log("Tócale bien a las teclas compañero");
             }
-        } while (opcion !== 4);
+        } while (opcion !== 5);
     };
     Main.prototype.lucharContraEnemigo = function () {
         var nombreEnemigo = this.enemigos[Math.floor(Math.random() * this.enemigos.length)];
