@@ -1,5 +1,6 @@
 import React from 'react';
-import BlackjackGame from 'BlackjackGame.jsx';
+import BlackjackGame from './BlackjackGame';
+
 
 function App() {
   return (
