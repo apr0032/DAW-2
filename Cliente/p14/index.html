@@ -5,7 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Organizador de Lista</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script>
+        function guardarElemento() {
+    var itemName = document.getElementById('itemName').value;
+    if (itemName.trim() === "") {
+        alert("Por favor, ingrese un nombre válido.");
+        return;
+    }
+
+    // Obtener lista actual
+    var itemList = JSON.parse(localStorage.getItem('itemList')) || [];
+
+    // Agregar nuevo elemento
+    itemList.push(itemName);
+
+    // Guardar lista actualizada en localStorage
+    localStorage.setItem('itemList', JSON.stringify(itemList));
+
+    // Limpiar campo de entrada
+    document.getElementById('itemName').value = "";
+
+    // Actualizar la lista en la página    ????????????????????????????????????????????????????????????????????????????????????????????????????????????
+    actualizarContenido();
+}
+
+function mostrarContenido() {
+    var listContainer = document.getElementById('list-container');
+    var itemList = JSON.parse(localStorage.getItem('itemList')) || [];
+    var ul = document.getElementById('itemList');
+
+    // Si el contenedor está visible, ocultamos solo la lista (ul)
+    if (ul.style.display !== 'none') {
+        ul.style.display = 'none';
+        return;
+    }
+    // Si la lista está oculta, la mostramos y actualizamos el contenido
+    ul.style.display = 'block';
+    ul.innerHTML = '';
+
+    itemList.forEach(function (item) {
+        var li = document.createElement('li');
+        li.textContent = item;
+        var deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Eliminar';
+        deleteButton.onclick = function () {
+            eliminarElemento(item);
+        };
+        li.appendChild(deleteButton);
+        ul.appendChild(li);
+    });
+}
+
+
+function actualizarContenido() {
+    var listContainer = document.getElementById('list-container');
+    var itemList = JSON.parse(localStorage.getItem('itemList')) || [];
+    var ul = document.getElementById('itemList');
+
+    // Si la lista está oculta, la mostramos y actualizamos el contenido
+    ul.style.display = 'block';
+    ul.innerHTML = '';
+
+    itemList.forEach(function (item) {
+        var li = document.createElement('li');
+        li.textContent = item;
+
+        var deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Eliminar';
+        deleteButton.onclick = function () {
+            eliminarElemento(item);
+        };
+
+        li.appendChild(deleteButton);
+        ul.appendChild(li);
+    });
+}
+
+
+function eliminarElemento(item) {
+    var itemList = JSON.parse(localStorage.getItem('itemList')) || [];
+
+    // Eliminar el elemento específico
+    var index = itemList.indexOf(item);
+    if (index !== -1) {
+        itemList.splice(index, 1);
+        localStorage.setItem('itemList', JSON.stringify(itemList));
+        actualizarContenido();
+    }
+}
+
+function limpiarContenido() {
+    // Limpiar todos los elementos
+    localStorage.removeItem('itemList');
+    mostrarContenido();
+}
+
+    </script>
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
