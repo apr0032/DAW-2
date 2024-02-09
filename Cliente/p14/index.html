@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organizador de Lista</title>
+    <title>Lista</title>
     <link rel="stylesheet" href="style.css">
     <script>
         function guardarElemento() {
@@ -39,7 +39,7 @@ function mostrarContenido() {
         ul.style.display = 'none';
         return;
     }
-    // Si la lista está oculta, la mostramos y actualizamos el contenido
+    // Si la lista está oculta, mostrar y actualizar
     ul.style.display = 'block';
     ul.innerHTML = '';
 
@@ -62,7 +62,6 @@ function actualizarContenido() {
     var itemList = JSON.parse(localStorage.getItem('itemList')) || [];
     var ul = document.getElementById('itemList');
 
-    // Si la lista está oculta, la mostramos y actualizamos el contenido
     ul.style.display = 'block';
     ul.innerHTML = '';
 
@@ -95,7 +94,6 @@ function eliminarElemento(item) {
 }
 
 function limpiarContenido() {
-    // Limpiar todos los elementos
     localStorage.removeItem('itemList');
     mostrarContenido();
 }
