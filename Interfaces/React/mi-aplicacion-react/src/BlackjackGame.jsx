@@ -1,147 +1,146 @@
-// BlackjackGame.jsx
 import React, { useState, useEffect } from 'react';
 import { Button, Card, Container, Row, Col, Alert } from 'react-bootstrap';
 
-const BlackjackGame = () => {
-  const [playerCards, setPlayerCards] = useState([]);
-  const [dealerCards, setDealerCards] = useState([]);
-  const [deck, setDeck] = useState([]);
-  const [playerSum, setPlayerSum] = useState(0);
-  const [dealerSum, setDealerSum] = useState(0);
-  const [gameInProgress, setGameInProgress] = useState(false);
-  const [winner, setWinner] = useState('');
+const JuegoBlackjack = () => {
+  const [cartasJugador, setCartasJugador] = useState([]);
+  const [cartasCrupier, setCartasCrupier] = useState([]);
+  const [mazo, setMazo] = useState([]);
+  const [sumaJugador, setSumaJugador] = useState(0);
+  const [sumaCrupier, setSumaCrupier] = useState(0);
+  const [juegoEnProgreso, setJuegoEnProgreso] = useState(false);
+  const [ganador, setGanador] = useState('');
 
   useEffect(() => {
-    startNewRound();
+    comenzarNuevaRonda();
   }, []);
 
-  const startNewRound = () => {
-    setPlayerCards([]);
-    setDealerCards([]);
-    setDeck([]);
-    setPlayerSum(0);
-    setDealerSum(0);
-    setGameInProgress(true);
-    setWinner('');
-    createDeck();
-    dealInitialCards();
+  const comenzarNuevaRonda = () => {
+    setCartasJugador([]);
+    setCartasCrupier([]);
+    setMazo([]);
+    setSumaJugador(0);
+    setSumaCrupier(0);
+    setJuegoEnProgreso(true);
+    setGanador('');
+    crearMazo();
+    repartirCartasIniciales();
   };
 
-  const createDeck = () => {
-    const suits = ['Picas', 'Corazones', 'Rombos', 'Tréboles'];
-    const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+  const crearMazo = () => {
+    const palos = ['Picas', 'Corazones', 'Rombos', 'Tréboles'];
+    const valores = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
-    const newDeck = [];
-    for (const suit of suits) {
-      for (const value of values) {
-        newDeck.push({ suit, value });
+    const nuevoMazo = [];
+    for (const palo of palos) {
+      for (const valor of valores) {
+        nuevoMazo.push({ palo, valor });
       }
     }
 
-    // Barajar la baraja
-    for (let i = newDeck.length - 1; i > 0; i--) {
+    // Barajar el mazo
+    for (let i = nuevoMazo.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [newDeck[i], newDeck[j]] = [newDeck[j], newDeck[i]];
+      [nuevoMazo[i], nuevoMazo[j]] = [nuevoMazo[j], nuevoMazo[i]];
     }
 
-    setDeck(newDeck);
+    setMazo(nuevoMazo);
   };
 
-  const dealInitialCards = () => {
-    const playerCard = drawCard();
-    const dealerCard1 = drawCard();
-    const dealerCard2 = drawCard();
+  const repartirCartasIniciales = () => {
+    const cartaJugador = sacarCarta();
+    const cartaCrupier1 = sacarCarta();
+    const cartaCrupier2 = sacarCarta();
 
-    setPlayerCards([playerCard]);
-    setDealerCards([dealerCard1, dealerCard2]);
+    setCartasJugador([cartaJugador]);
+    setCartasCrupier([cartaCrupier1, cartaCrupier2]);
 
-    updateSum(playerCard, 'player');
-    updateSum(dealerCard1, 'dealer');
-    updateSum(dealerCard2, 'dealer');
+    actualizarSuma(cartaJugador, 'jugador');
+    actualizarSuma(cartaCrupier1, 'crupier');
+    actualizarSuma(cartaCrupier2, 'crupier');
   };
 
-  const drawCard = () => {
-    const [drawnCard, ...remainingDeck] = deck;
-    setDeck(remainingDeck);
-    return drawnCard;
+  const sacarCarta = () => {
+    const [cartaSacada, ...mazoRestante] = mazo;
+    setMazo(mazoRestante);
+    return cartaSacada;
   };
 
-  const updateSum = (card, player) => {
-    const sum = player === 'player' ? playerSum : dealerSum;
-    const cardValue = getCardValue(card);
-    const newSum = sum + cardValue;
+  const actualizarSuma = (carta, jugador) => {
+    const suma = jugador === 'jugador' ? sumaJugador : sumaCrupier;
+    const valorCarta = obtenerValorCarta(carta);
+    const nuevaSuma = suma + valorCarta;
 
-    if (player === 'player') {
-      setPlayerSum(newSum);
+    if (jugador === 'jugador') {
+      setSumaJugador(nuevaSuma);
     } else {
-      setDealerSum(newSum);
+      setSumaCrupier(nuevaSuma);
     }
 
-    checkForBust(newSum, player);
+    comprobarExceso(nuevaSuma, jugador);
   };
 
-  const getCardValue = (card) => {
-    const value = card.value;
-    if (value === 'K' || value === 'Q' || value === 'J') {
+  const obtenerValorCarta = (carta) => {
+    const valor = carta.valor;
+    if (valor === 'K' || valor === 'Q' || valor === 'J') {
       return 10;
-    } else if (value === 'A') {
+    } else if (valor === 'A') {
       return 11;
     } else {
-      return parseInt(value);
+      return parseInt(valor);
     }
   };
 
-  const checkForBust = (sum, player) => {
-    if (sum > 21) {
-      endRound(player === 'player' ? 'dealer' : 'player');
+  const comprobarExceso = (suma, jugador) => {
+    if (suma > 21) {
+      finalizarRonda(jugador === 'jugador' ? 'crupier' : 'jugador');
     }
   };
 
-  const hit = () => {
-    const newCard = drawCard();
-    setPlayerCards([...playerCards, newCard]);
-    updateSum(newCard, 'player');
+  const pedirCarta = () => {
+    const nuevaCarta = sacarCarta();
+    setCartasJugador([...cartasJugador, nuevaCarta]);
+    actualizarSuma(nuevaCarta, 'jugador');
   };
 
-  const stand = () => {
-    while (dealerSum < 17) {
-      const newCard = drawCard();
-      setDealerCards([...dealerCards, newCard]);
-      updateSum(newCard, 'dealer');
+  const plantarse = () => {
+    while (sumaCrupier < 17) {
+      const nuevaCarta = sacarCarta();
+      setCartasCrupier([...cartasCrupier, nuevaCarta]);
+      actualizarSuma(nuevaCarta, 'crupier');
     }
 
-    determineWinner();
+    determinarGanador();
   };
 
-  const determineWinner = () => {
-    if (playerSum > dealerSum && playerSum <= 21) {
-      endRound('player');
+  const determinarGanador = () => {
+    if (sumaJugador > sumaCrupier && sumaJugador <= 21) {
+      finalizarRonda('jugador');
     } else {
-      endRound('dealer');
+      finalizarRonda('crupier');
     }
   };
 
-  const endRound = (roundWinner) => {
-    setGameInProgress(false);
-    setWinner(roundWinner);
-    alert(`¡${roundWinner === 'player' ? 'Jugador' : 'Crupier'} gana la ronda!`);
+  const finalizarRonda = (ganadorRonda) => {
+    setJuegoEnProgreso(false);
+    setGanador(ganadorRonda);
+    alert(`¡${ganadorRonda === 'jugador' ? 'Jugador' : 'Crupier'} gana la ronda!`);
   };
 
   return (
     <Container className="mt-5">
       <Row className="mb-3">
         <Col>
-          <Button variant="primary" onClick={hit} disabled={!gameInProgress}>
-            Solicitar Carta
+          <Button variant="primary" onClick={pedirCarta} disabled={!juegoEnProgreso}>
+            Pedir Carta
           </Button>
         </Col>
         <Col>
-          <Button variant="warning" onClick={stand} disabled={!gameInProgress}>
+          <Button variant="warning" onClick={plantarse} disabled={!juegoEnProgreso}>
             Plantarse
           </Button>
         </Col>
         <Col>
-          <Button variant="success" onClick={startNewRound} disabled={gameInProgress}>
+          <Button variant="success" onClick={comenzarNuevaRonda} disabled={juegoEnProgreso}>
             Nueva Ronda
           </Button>
         </Col>
@@ -151,14 +150,14 @@ const BlackjackGame = () => {
           <h2>Crupier</h2>
           <Card>
             <Card.Body>
-              {gameInProgress ? (
+              {juegoEnProgreso ? (
                 <>
-                  <Card.Text>{dealerCards.length > 0 && dealerCards[0].value}</Card.Text>
-                  <Card.Text>Suma: {dealerSum}</Card.Text>
+                  <Card.Text>{cartasCrupier.length > 0 && cartasCrupier[0].valor}</Card.Text>
+                  <Card.Text>Suma: {sumaCrupier}</Card.Text>
                 </>
               ) : (
-                dealerCards.map((card, index) => (
-                  <Card.Text key={index}>{card.value}</Card.Text>
+                cartasCrupier.map((carta, index) => (
+                  <Card.Text key={index}>{carta.valor}</Card.Text>
                 ))
               )}
             </Card.Body>
@@ -168,19 +167,19 @@ const BlackjackGame = () => {
           <h2>Jugador</h2>
           <Card>
             <Card.Body>
-              {playerCards.map((card, index) => (
-                <Card.Text key={index}>{card.value}</Card.Text>
+              {cartasJugador.map((carta, index) => (
+                <Card.Text key={index}>{carta.valor}</Card.Text>
               ))}
-              <Card.Text>Suma: {playerSum}</Card.Text>
+              <Card.Text>Suma: {sumaJugador}</Card.Text>
             </Card.Body>
           </Card>
         </Col>
       </Row>
-      {winner && (
+      {ganador && (
         <Row className="mt-3">
           <Col>
-            <Alert variant={winner === 'player' ? 'success' : 'danger'}>
-              ¡{winner === 'player' ? 'Jugador' : 'Crupier'} gana la partida!
+            <Alert variant={ganador === 'jugador' ? 'success' : 'danger'}>
+              ¡{ganador === 'jugador' ? 'Jugador' : 'Crupier'} gana la partida!
             </Alert>
           </Col>
         </Row>
@@ -189,4 +188,4 @@ const BlackjackGame = () => {
   );
 };
 
-export default BlackjackGame;
+export default JuegoBlackjack;
