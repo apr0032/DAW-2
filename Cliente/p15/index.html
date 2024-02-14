@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas por hacer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Tareas</h1>
+        <!-- V-model se utiliza aquí para enlazar el input con el data newTask -->
+        <input type="text" v-model="newTask" placeholder="Nueva tarea">
+        <!-- Directiva v-on se utiliza aquí para capturar el evento click y llamar al método addTask -->
+        <button @click="addTask">Agregar tarea</button>
+        <ul>
+            <!-- Directiva v-for se utiliza aquí para iterar sobre la lista tasks -->
+            <li v-for="(task, index) in tasks" :key="index">
+                {{ task }}
+                <!-- Directiva v-on se utiliza aquí para capturar el evento click y llamar al método removeTask -->
+                <button @click="removeTask(index)">Eliminar</button>
+            </li>
+        </ul>
+        <!-- Directiva v-if, v-else-if, v-else se utiliza aquí para mostrar mensajes dinámicos según el estado de tasks -->
+        <p v-if="tasks.length === 0">No hay tareas pendientes</p>
+        <p v-else-if="tasks.length === 1">Hay una tarea pendiente</p>
+        <p v-else>Hay {{ tasks.length }} tareas pendientes</p>
+        <!-- Directiva v-bind se utiliza aquí para enlazar el atributo style -->
+        <div :style="{ color: textColor }">Aquí se usa la directiva v-bind con el color: {{ textColor }}</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="app.js"></script>
+</body>
+</html>
