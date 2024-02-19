@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: bot.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: bot.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @file bot.js
+ * @brief Bot de Telegram para consultar información sobre criptomonedas.
+ */
+
+// Importar las librerías necesarias
+const TelegramBot = require('node-telegram-bot-api'); // Librería para interactuar con la API de Telegram
+const axios = require('axios'); // Librería para realizar solicitudes HTTP
+
+// Token de acceso del bot de Telegram
+const token = '6554977676:AAGvZVYtTycKFXvliWyRzWtkWwLyhj89Zrc'; // Token de acceso proporcionado por BotFather
+
+// URL base de la API de CoinGecko
+const coingeckoBaseURL = 'https://api.coingecko.com/api/v3';
+
+// Crear un nuevo bot utilizando el token
+const bot = new TelegramBot(token, { polling: true });
+
+/**
+ * Manejar el comando /precio para obtener el precio de una criptomoneda.
+ * @param msg - Objeto que representa el mensaje recibido.
+ * @param match - Resultado de la coincidencia de expresiones regulares.
+ */
+bot.onText(/\/precio (.+)/, async (msg, match) => {
+    const chatId = msg.chat.id;
+    const criptomoneda = match[1];
+
+    try {
+        // Hacer la solicitud a la API de CoinGecko para obtener el precio de la criptomoneda
+        const response = await axios.get(`${coingeckoBaseURL}/simple/price`, {
+            params: {
+                ids: criptomoneda,
+                vs_currencies: 'usd'
+            }
+        });
+
+        const data = response.data[criptomoneda];
+        if (data) {
+            const precioUSD = data.usd;
+            const mensaje = `El precio de ${criptomoneda.toUpperCase()} es $${precioUSD.toFixed(2)} USD💵.`;
+
+            // Enviar la respuesta al usuario
+            bot.sendMessage(chatId, mensaje);
+        } else {
+            bot.sendMessage(chatId, `No se encontró información para la criptomoneda ${criptomoneda.toUpperCase()}.`);
+        }
+    } catch (error) {
+        console.error('Error al obtener el precio de la criptomoneda:', error);
+        bot.sendMessage(chatId, 'Ocurrió un error al obtener el precio de la criptomoneda. Por favor, intenta nuevamente más tarde.');
+    }
+});
+
+/**
+ * Manejar el comando /info para obtener información básica de una criptomoneda.
+ * @param msg - Objeto que representa el mensaje recibido.
+ * @param match - Resultado de la coincidencia de expresiones regulares.
+ */
+bot.onText(/\/info (.+)/, async (msg, match) => {
+    const chatId = msg.chat.id;
+    const criptomoneda = match[1];
+
+    try {
+        // Hacer la solicitud a la API de CoinGecko para obtener información básica de la criptomoneda
+        const response = await axios.get(`${coingeckoBaseURL}/coins/${criptomoneda}`);
+        const data = response.data;
+        
+        if (data) {
+            const nombre = data.name;
+            const simbolo = data.symbol;
+            const mensaje = `Información de ${nombre} (${simbolo.toUpperCase()}):💰\nNombre: ${nombre}\nSímbolo: ${simbolo}`;
+
+            // Enviar la respuesta al usuario
+            bot.sendMessage(chatId, mensaje);
+        } else {
+            bot.sendMessage(chatId, `No se encontró información para la criptomoneda ${criptomoneda.toUpperCase()}.`);
+        }
+    } catch (error) {
+        console.error('Error al obtener la información de la criptomoneda:', error);
+        bot.sendMessage(chatId, 'Ocurrió un error al obtener la información de la criptomoneda. Por favor, intenta nuevamente más tarde.');
+    }
+});
+
+/**
+ * Manejar el comando /listacriptomonedas para obtener una lista de las criptomonedas más populares.
+ * @param msg - Objeto que representa el mensaje recibido.
+ */
+bot.onText(/\/listacriptomonedas/, async (msg) => {
+    const chatId = msg.chat.id;
+    const criptomonedasPopulares = [
+        "Bitcoin (BTC)",
+        "Ethereum (ETH)",
+        "Binance Coin (BNB)",
+        "Solana (SOL)",
+        "Cardano (ADA)",
+        "XRP (XRP)",
+        "Tether (USDT)",
+        "Polkadot (DOT)",
+        "Dogecoin (DOGE)",
+        "Avalanche (AVAX)"
+    ];
+
+    const mensaje = `Las 10 criptomonedas más populares son:💰\n${criptomonedasPopulares.join('\n')}`;
+    bot.sendMessage(chatId, mensaje);
+});
+
+/**
+ * Manejar el comando /cambios para obtener los cambios de precio de una criptomoneda en los últimos días.
+ * @param msg - Objeto que representa el mensaje recibido.
+ * @param match - Resultado de la coincidencia de expresiones regulares.
+ */
+bot.onText(/\/cambios (.+)/, async (msg, match) => {
+    const chatId = msg.chat.id;
+    const criptomoneda = match[1];
+
+    try {
+        // Hacer la solicitud a la API de CoinGecko para obtener los cambios de la criptomoneda
+        const response = await axios.get(`${coingeckoBaseURL}/coins/${criptomoneda}/market_chart`, {
+            params: {
+                vs_currency: 'usd',
+                days: 3 // Obtener los cambios de los últimos 3 días
+            }
+        });
+        const data = response.data;
+        
+        if (data.prices) {
+            // Limitar el número de cambios de precio a los últimos 3 días
+            const cambios = data.prices.map(price => price[1]);
+            const mensaje = `Cambios de precio de ${criptomoneda.toUpperCase()} en los últimos 3 días:⏱️\n${cambios.join('\n')}`;
+
+            // Enviar la respuesta al usuario
+            bot.sendMessage(chatId, mensaje);
+        } else {
+            bot.sendMessage(chatId, `No se encontró información para la criptomoneda ${criptomoneda.toUpperCase()}.`);
+        }
+    } catch (error) {
+        console.error('Error al obtener los cambios de la criptomoneda:', error);
+        bot.sendMessage(chatId, 'Ocurrió un error al obtener los cambios de la criptomoneda. Por favor, intenta nuevamente más tarde.');
+    }
+});
+
+/**
+ * Manejar el comando /help para mostrar la lista de comandos disponibles.
+ * @param msg - Objeto que representa el mensaje recibido.
+ */
+bot.onText(/\/help/, (msg) => {
+    const chatId = msg.chat.id;
+    const mensaje = `✅Lista de comandos disponibles:✅\n
+    🟢 /precio [criptomoneda] - Obtener el precio de una criptomoneda \n    Ejemplo: /precio solana\n
+    🟢 /info [criptomoneda] - Obtener información básica de una criptomoneda \n     Ejemplo: /info bitcoin\n
+    🟢 /cambios [criptomoneda] - Obtener los cambios de precio de una criptomoneda en los últimos 3 días \n     Ejemplo: /cambios cardano\n
+    🟢 /listacriptomonedas - Obtener una lista de las criptomonedas más populares\n
+    🟢 /autor - Obtener información acerca del bot\n
+    🟢 /help - Mostrar esta lista de comandos`;
+
+    bot.sendMessage(chatId, mensaje);
+});
+
+/**
+ * Manejar el comando /start para mostrar un mensaje de bienvenida y la lista de comandos disponibles.
+ * @param msg - Objeto que representa el mensaje recibido.
+ */
+bot.onText(/\/start/, (msg) => {
+    const chatId = msg.chat.id;
+    // Mostrar la ayuda al usuario
+    bot.sendMessage(chatId, '¡Bienvenido!🥳 Soy un bot de Telegram para consultar información sobre criptomonedas💰. Para ver la lista de comandos disponibles, usa el comando /help⛑️.');
+});
+
+/**
+ * Manejar el comando /autor para mostrar información acerca del autor del bot.
+ * @param msg - Objeto que representa el mensaje recibido.
+ */
+bot.onText(/\/autor/, (msg) => {
+    const chatId = msg.chat.id;
+    const mensaje = `¡Hola! Soy un bot automático sobre criptos💴 creado por Antonio Perez🤠💯 y desarrollado en Node.js`;
+
+    bot.sendMessage(chatId, mensaje, { parse_mode: 'Markdown' });
+});
+
+/**
+ * @brief Lista de comandos conocidos.
+ * Esta lista contiene expresiones regulares que representan los comandos que el bot puede reconocer.
+ */
+const comandosConocidos = [
+    /\/precio (.+)/,
+    /\/info (.+)/,
+    /\/listacriptomonedas/,
+    /\/cambios (.+)/,
+    /\/help/,
+    /\/start/,
+    /\/autor/
+];
+
+/**
+ * @brief Manejar mensajes que no coinciden con ningún comando conocido.
+ * Si un mensaje no coincide con ningún comando conocido, el bot enviará un mensaje predeterminado al usuario.
+ * @param msg - Objeto que representa el mensaje recibido.
+ */
+bot.on('message', (msg) => {
+    const chatId = msg.chat.id;
+    const mensajeUsuario = msg.text;
+
+    // Verificar si el mensaje coincide con alguno de los comandos conocidos
+    const comandoConocido = comandosConocidos.some(comando => comando.test(mensajeUsuario));
+
+    if (!comandoConocido) {
+        // Si el mensaje no coincide con ningún comando conocido, enviar un mensaje predeterminado
+        const mensaje = 'Lo siento, no te he entendido. Por favor, utiliza uno de los comandos disponibles en /help.';
+        bot.sendMessage(chatId, mensaje);
+    }
+});
+
+
+// Imprimir mensaje de confirmación
+console.log('Bot de Telegram listo para recibir comandos.');
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#comandosConocidos">comandosConocidos</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Mon Feb 19 2024 15:16:28 GMT+0100 (hora estándar de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
